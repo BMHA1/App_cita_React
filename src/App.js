@@ -6,6 +6,9 @@ import Header from './Components/Header/Header'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListAllPets from "./Containers/ListAllPets/ListAllPets"
 import Register from "./Containers/Register/Register"
+import ListPet from './Containers/ListPet/ListPet';
+import AddPet from './Containers/AddPet/AddPet';
+import AddAppointments from './Containers/AddAppointments/AddAppointments';
 
 return (
   <div className="App">
