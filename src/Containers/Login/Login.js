@@ -1,7 +1,7 @@
 
 import './Login.scss'
 import { APIConsumer } from "../../service/Apiconsumer/APIConsumer"
-import jwt_decode from "jwt-decode"
+// import jwt_decode from "jwt-decode"
 import Button from "../../Components/Button/Button"
 import action from "../../service/redux/actionTools/action";
 import store from "../../service/redux/store"

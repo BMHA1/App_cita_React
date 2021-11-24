@@ -3,15 +3,36 @@ import CarBuy from './Components/CarBuy/CarBuy';
 import ProductList from './Components/ProductList/ProductList';
 import Login from './Containers/Login/Login';
 import Header from './Components/Header/Header'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ListAllPets from "./Containers/ListAllPets/ListAllPets"
+import Register from "./Containers/Register/Register"
 
-    return (
-      <div classFName="App">
+return (
+  <div className="App">
+    <>
+      <BrowserRouter>
         <Header />
-        <Login />
-        <CarBuy />
-        <ProductList />
-      </div>
-    );
-  }
+        <Routes>
 
-  export default App;
+          <Route path="/" element={<HomePage />} exact />     {/* página de muestra y bienvenida */}
+          <Route path="/login" element={<Login />} exact /> {/* página de login */}
+          <Route path="/register" element={<Register />} exact />  {/* página de Registro*/}
+          <Route path="/listallpet" element={<ListAllPets />} exact />{/* página donde muestra todas las mascotas del mismo dueño*/}
+          <Route path="/lispet" element={<ListPet/>} exact />{/* página donde muestra el perfil de un mascota en particular*/}
+          <Route path="/addpet" element={<AddPet/>} exact />{/* página dar de alta a una mascota*/}
+          <Route path="/addapointments" element={<AddAppointments/>} exact />{/* página para pedir cita*/}
+         
+
+          
+
+        </Routes>
+      </BrowserRouter>
+    </>
+
+
+  </div>
+);
+
+
+export default App;
+

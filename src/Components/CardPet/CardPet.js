@@ -4,7 +4,7 @@ import store from '../../service/redux/store';
 import action from '../../service/redux/actionTools/action';
 import CardProduct from '../CardProduct/CardProduct';
 
-const CarBuy = () => {
+const CardPet = () => {
 
     const [productsBuy, setproductsBuy] = useState([])
 
@@ -27,11 +27,10 @@ const CarBuy = () => {
                     />
                 })}
             </div>
-
         </>
     )
 
 }
 
-export default CarBuy
+export default CardPet
 

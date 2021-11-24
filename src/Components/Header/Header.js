@@ -18,9 +18,7 @@ const Header = () => {
             setClave(store.getState().user.token)
             console.log(clave)
         })
-
     });
-
 
     return (
         <>
