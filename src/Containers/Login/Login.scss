@@ -1,0 +1,32 @@
+.Padre {
+    .Profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .Logo-ideal {
+            height: 20em;
+            width: 20em;
+            border-radius: 100em;
+            border: 0.2em black solid;
+        }
+        form {
+            legend {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 2em;
+            }
+            .imput{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .content-button {
+            display:flex;
+            flex-direction: row;
+            padding: 2em;
+        }
+    }
+}
