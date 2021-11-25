@@ -1,14 +1,9 @@
-// import React, { useState, useEffect } from 'react';
 import { useState } from 'react';
-import { APIConsumer } from '../../services/APIConsumer';
-import Button from '../Components/Button/Button';
-
-
+import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
 
 
 const Register = () => {
 
-    // const [msgValidation, SetgValidation] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 
@@ -82,7 +77,9 @@ const Register = () => {
                             </label>
                         </div>
                     </div>
-                    <Button type="onSubmit">Registrarte</Button>
+            
+                    {/* <Button type="onSubmit">Registrarte</Button> */}
+                    
                 </fieldset>
             </form>
         </>

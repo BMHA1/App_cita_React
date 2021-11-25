@@ -1,44 +1,38 @@
 
 import './Login.scss'
-import { APIConsumer } from "../../service/Apiconsumer/APIConsumer"
-// import jwt_decode from "jwt-decode"
+// import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
 import Button from "../../Components/Button/Button"
-import action from "../../service/redux/actionTools/action";
-import store from "../../service/redux/store"
+// import action from "../../service/redux/actionTools/action";
+// import store from "../../service/redux/store"
 
 
 const Login = (props) => {
 
+    // const [clave, setClave] = useState(false)
 
 
-    const [clave, setClave] = useState(false)
-
-   
-    //enviamos datos y logeamos al usuario 
+    // //enviamos datos y logeamos al usuario 
     const handleSendData = async (e) => {
-        e.preventDefault()
-        let email = e.target.email.value
-        let password = e.target.password.value
+        // e.preventDefault()
+        // let email = e.target.email.value
+        // let password = e.target.password.value
 
-        try {
-            let res = await APIConsumer.loginUser(email, password);
-            if (!res) return store.dispatch(action.addToken(false))
-            else store.dispatch(action.addToken(res))
-
-
-
-        } catch (error) {
-            alert(error, " hola mundo");
-        }
+        // try {
+        //     let res = await APIConsumer.loginUser(email, password);
+        //     if (!res) return store.dispatch(action.addToken(false))
+        //     else store.dispatch(action.addToken(res))
+        // } catch (error) {
+        //     alert(error, " hola mundo");
+        // }
 
     }
-  
+
 
     return (
         <div className="Padre">
             <div className="Profile">
                 <form onSubmit={(e) => handleSendData(e)}>
-                    <legend>¿Preparado para vivir una experiencia?</legend>
+                    {/* <legend>¿Preparado para vivir una experiencia?</legend> */}
                     <div className='imput'>
                         <div className="float-right">
                             <label>

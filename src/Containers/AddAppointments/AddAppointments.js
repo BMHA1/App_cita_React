@@ -1,6 +1,6 @@
 const AddAppointments= () => {
 
-    return (
+    return(
         <>
             <h1>
             Soy AddAppointments
