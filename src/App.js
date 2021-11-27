@@ -9,13 +9,15 @@ import AddPet from './Containers/AddPet/AddPet';
 import AddAppointments from './Containers/AddAppointments/AddAppointments';
 import ListUser from './Containers/ListUser/ListUser';
 import HomePage from './Containers/HomePage/HomePage';
-
+import { Provider } from 'react-redux';
+import store from './service/redux/store';
 function App() {
   return (
     <>
       <BrowserRouter>
         <Header />
         <Routes>
+        <Provider store={store}>
           <Route path="/" element={<HomePage />} exact />     {/* página de muestra y bienvenida */}
           <Route path="/login" element={<Login />} exact /> {/* página de login */}
           <Route path="/register" element={<Register />} exact />  {/* página de Registro*/}
@@ -24,11 +26,11 @@ function App() {
           <Route path="/listuser" element={<ListUser />} exact />{/* página donde se mostrarán todos los usuarios (Solo Admin)*/}
           <Route path="/addpet" element={<AddPet />} exact />{/* página dar de alta a una mascota*/}
           <Route path="/addapointments" element={<AddAppointments />} exact />{/* página para pedir cita*/}
+        </Provider>
         </Routes>
       </BrowserRouter>
     </>
   );
 }
-
 export default App;
 
