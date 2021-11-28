@@ -1,6 +1,15 @@
-.header{
+.header {
     display: flex;
-    justify-content: center;
+    // align-items: right;
+    justify-content: right;
     flex-direction: row;
     background-color: azure;
+    border: red solid 1px;
+    ul {
+        gap: 0.5em;
+        margin-right: 1em;
+        border: red solid 1px;
+        display: flex;
+        justify-content: right;
+    }
 }

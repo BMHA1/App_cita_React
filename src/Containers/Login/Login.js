@@ -1,10 +1,10 @@
 
 import './Login.scss'
 // import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
-import Button from "../../Components/Button/Button"
+import Boton from "../../Components/Boton/Boton"
+import TextField from '@mui/material/TextField'
 // import action from "../../service/redux/actionTools/action";
 // import store from "../../service/redux/store"
-
 
 const Login = (props) => {
 
@@ -34,28 +34,25 @@ const Login = (props) => {
                 <form onSubmit={(e) => handleSendData(e)}>
                     {/* <legend>¿Preparado para vivir una experiencia?</legend> */}
                     <div className='imput'>
-                        <div className="float-right">
-                            <label>
-                                <input
-                                    type='email'
-                                    name='email'
-                                    placeholder="Escribe aqui tu email"
-                                    required />
-                            </label>
+                        <div className="email">
+                            <TextField type='email'
+                                size="small"
+                                name='email'
+                                placeholder="Introduce tú email"
+                                margin="normal"
+                                required />
                         </div>
-                        <div>
-                            <label>
-                                <input
-                                    type='password'
-                                    name='password'
-                                    placeholder="Password"
-                                    required />
-                            </label>
+                        <div className="password">
+                            <TextField type='password'
+                                size="small"
+                                name='password'
+                                placeholder="Introduce tu contraseña"
+                                margin="normal"
+                                required />
                         </div>
                     </div>
                     <div className="content-button">
-                        <Button type="onSubmit" ><span> Entrar </span></Button>
-                        {/* <Button onClick={() => redirection()} ><span> Registrarte </span></Button> */}
+                        <Boton type="onSubmit" ><span> Entrar </span></Boton>
                     </div>
                 </form>
             </div>

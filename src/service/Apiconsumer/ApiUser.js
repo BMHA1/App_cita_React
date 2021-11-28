@@ -21,14 +21,20 @@ export const APIConsumer = {
         }
     },
     //adaptar método para la nueva api
-    CreateUser: async (email, password) => {
+    CreateUser: async (user) => {
         try {
-            let result = await fetch(`http://localhost:4000/users/login`, {
+            let result = await fetch(`http://localhost:5000/user`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    "email": email,
-                    "password": password
+                    "avatar":user.avatar,
+                    "name":user.name,
+                    "email": user.email,
+                    "surname": user.surname,
+                    "password": user.password,
+                    "phone":user.phone,
+                    "age":user.age,
+                    "address":user.address
                 })
             })
 
