@@ -5,7 +5,9 @@ import { Grid } from '@mui/material';
 import Boton from '../../Components/Boton/Boton';
 import './Register.scss'
 import { useNavigate } from 'react-router-dom'
+
 const Register = () => {
+
     let navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -25,20 +27,17 @@ const Register = () => {
         }
         console.table(user)
         setTimeout(async () => {
-
             try {
                 let result = await APIConsumer.CreateUser(user)
                 console.log(result)
                 if (result) navigate('/login')
                 setLoading(false)
-
             } catch (error) {
                 alert(error)
                 setError(true)
                 setLoading(false)
             }
         }, 5000);
-
     }
 
 
@@ -126,7 +125,6 @@ const Register = () => {
             </form >
         </>
     )
-
 }
 
 export default Register

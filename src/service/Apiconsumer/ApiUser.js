@@ -1,14 +1,14 @@
 
 export const APIConsumer = {
     //    
-    loginUser: async (email, password) => {
+    loginUser: async (user) => {
         try {
-            let result = await fetch(`http://localhost:4000/users/login`, {
+            let result = await fetch(`http://localhost:5000/user/login`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    "email": email,
-                    "password": password
+                    "email": user.email,
+                    "password": user.password
                 })
             })
 
@@ -27,14 +27,14 @@ export const APIConsumer = {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    "avatar":user.avatar,
-                    "name":user.name,
+                    "avatar": user.avatar,
+                    "name": user.name,
                     "email": user.email,
                     "surname": user.surname,
                     "password": user.password,
-                    "phone":user.phone,
-                    "age":user.age,
-                    "address":user.address
+                    "phone": user.phone,
+                    "age": user.age,
+                    "address": user.address
                 })
             })
 

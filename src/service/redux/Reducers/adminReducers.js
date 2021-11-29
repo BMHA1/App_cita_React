@@ -2,6 +2,6 @@
 const adminReducers = (admin = [], action) => {
     console.log(admin, action)
 
-    return admin
+    return admin   
 }
 export default adminReducers

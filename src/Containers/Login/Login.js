@@ -1,29 +1,34 @@
 
 import './Login.scss'
-// import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
+import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
 import Boton from "../../Components/Boton/Boton"
 import TextField from '@mui/material/TextField'
-// import action from "../../service/redux/actionTools/action";
-// import store from "../../service/redux/store"
+import action from "../../service/redux/Action/ActionUser";
+import { useDispatch } from 'react-redux';
+
 
 const Login = (props) => {
 
     // const [clave, setClave] = useState(false)
+    const dispatch = useDispatch()
 
 
     // //enviamos datos y logeamos al usuario 
     const handleSendData = async (e) => {
-        // e.preventDefault()
-        // let email = e.target.email.value
-        // let password = e.target.password.value
+        e.preventDefault()
+        const user = {
+            email: e.target.email.value,
+            password: e.target.password.value
+        }
+        console.table(user)
 
-        // try {
-        //     let res = await APIConsumer.loginUser(email, password);
-        //     if (!res) return store.dispatch(action.addToken(false))
-        //     else store.dispatch(action.addToken(res))
-        // } catch (error) {
-        //     alert(error, " hola mundo");
-        // }
+        try {
+            let res = await APIConsumer.loginUser(user);
+            if (!res) return dispatch(action.addToken(false))
+            else dispatch(action.addToken(res))
+        } catch (error) {
+            alert(error, " hola mundo");
+        }
 
     }
 
