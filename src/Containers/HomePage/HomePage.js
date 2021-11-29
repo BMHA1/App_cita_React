@@ -13,7 +13,9 @@ const HomePage = () => {
         <>
             <div className="containerGeneral-Home">
                 <div className="containerCentral-Home">
+
                     <div className="title-Home">
+                        <p>Clínica Veterinaria Sedaví</p>
                         <h1>Los Animales son Nuestras Mascotas y Nuestra Vida </h1><br />
                         <p className="text-Home">  Ayudamos a las familias a tener animales sanos para
                             poder disfrutarlos muchos años gracias a la medicina
@@ -34,19 +36,21 @@ const HomePage = () => {
                             <h3>Diagnóstico por imágen</h3>
                             <p>Menos esperas que nunca.Contamos con las últimas tecnologías, lo que nos permite acelerar los diagnósticos.</p>
                         </div>
-
+                    </div>
+                    <div className="containerServices-Home-row">
                         <div className="cardServices-Home">
                             <img src={gato} alt="logo" />
                             <h3>Instalaciones</h3>
                             <p>Hemos diseñado nuestro espacio para ofrecer el máximo confort a nuestros pacientes, contando con zonas diferenciadas para perros y gatos. Minimizamos el estrés en nuestros pacientes felinos gracias a contar con sala de espera , consulta y hospitalización específica para ellos.</p>
                         </div>
-                    </div>
-                    <div className="containerServices-Home-row">
                         <div className="cardServices-Home">
                             <img src={curita1} alt="logo" />
                             <h3>Profesionales</h3>
                             <p>Te atenderán profesionales altamente cualificadas. La salud de tu animal está en buenas manos.</p>
                         </div>
+                    </div>
+                    <div className="containerServices-Home-row">
+
                         <div className="cardServices-Home">
                             <img src={inyeccion2} alt="logo" />
                             <h3>Vacunación</h3>

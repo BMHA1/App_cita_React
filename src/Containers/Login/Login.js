@@ -4,15 +4,16 @@ import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
 import Boton from "../../Components/Boton/Boton"
 import TextField from '@mui/material/TextField'
 import action from "../../service/redux/Action/ActionUser";
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+import jwt_decode from "jwt-decode"
 
 const Login = (props) => {
+    let navigate = useNavigate()
 
-    // const [clave, setClave] = useState(false)
     const dispatch = useDispatch()
-
-
+    const user = useSelector((store) => store.user.token)
+    console.log(user)
     // //enviamos datos y logeamos al usuario 
     const handleSendData = async (e) => {
         e.preventDefault()
@@ -24,14 +25,25 @@ const Login = (props) => {
 
         try {
             let res = await APIConsumer.loginUser(user);
-            if (!res) return dispatch(action.addToken(false))
-            else dispatch(action.addToken(res))
-        } catch (error) {
-            alert(error, " hola mundo");
-        }
+            console.log(res.token)
+            if (!res.token) return dispatch(action.addToken(false))
+            else {
+                dispatch(action.addToken(res.token))
+                decode(res.token)
+            }
 
+
+        } catch (error) {
+            alert(error, " es de login");
+        }
     }
 
+    const decode = (token) => {
+        let jtw = jwt_decode(token);
+        if (jtw && jtw.role === "user") navigate('/profileuser')
+        if (jtw && jtw.role === "admin") navigate('/profileadmin')
+        else if (jtw && jtw.role === "doctor") navigate('/profiledoctor')
+    }
 
     return (
         <div className="Padre">
@@ -64,4 +76,5 @@ const Login = (props) => {
         </div>
     )
 }
+
 export default Login
