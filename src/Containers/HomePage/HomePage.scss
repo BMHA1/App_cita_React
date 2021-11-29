@@ -1,0 +1,34 @@
+.containercGeneral-Home {
+    border: 1px solid red;
+    width: 100vmax;
+    height: 100vh;
+    .containerCentral-Home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .title-Home {
+            border: 1px solid red;
+            // font-size: 0.2em;
+            color: rgba(9, 107, 91, 0.822);
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            background-color: azure;
+            .text-Home {
+                text-align: justify;
+                margin: 0.4em;
+                color: rgba(13, 17, 16, 0.822);
+            }
+        }
+        .img1 {
+            height: 20em;
+            width: 50em;
+            background-repeat: no-repeat;
+            background-image: url(https://veterinariasedavi.com/new/wp-content/uploads/2021/11/equipo-cvs-1-min-1024x683.jpg);
+        }
+     
+    }
+    .containerServices-Home {
+        border: 1px solid red;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}

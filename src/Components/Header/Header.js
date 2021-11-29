@@ -11,7 +11,7 @@ import Boton from '../Boton/Boton'
 const Header = () => {
 
     const [clave, setClave] = useState(false)
-    // const [Dasboard, setDasboard] = useState(false)
+    const [Dasboard, setDasboard] = useState(false)
     // const [DasboardUser, setDasboardUser] = useState(false)
     // const [DasboardAdmin, setDasboardAdmin] = useState(false)
     // const [DasboardDoctor, setDasboardDoctor] = useState(false)
@@ -30,6 +30,8 @@ const Header = () => {
     return (
         <>
             <div className='header'>
+                <div className='logo'></div >
+                <div className='panelCentral'></div >
                 <ul>
                     <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/login">Entrar</NavLink>
@@ -37,14 +39,14 @@ const Header = () => {
                     <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>
-                    {< Boton variant="outlined" size="small" margin="normal">
+                    {Dasboard && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Pedir Cita</NavLink>
                     </Boton>}
-                    {<Boton variant="outlined" size="small" margin="normal">
+                    {Dasboard && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Cerrar Sesión</NavLink>
                     </Boton>}
                 </ul>
-            </div>
+            </div >
         </>
     )
 }
