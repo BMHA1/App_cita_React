@@ -15,8 +15,6 @@ const Header = () => {
     console.log(user)
     // const admin = useSelector((store) => store.admin)
     // const doctor = useSelector((store) => store.doctor)
-
-
     return (
         <>
             <div className='header'>
@@ -33,7 +31,7 @@ const Header = () => {
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/register">Pedir Cita</NavLink>
+                        <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Cerrar Sesión</NavLink>

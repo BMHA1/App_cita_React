@@ -5,7 +5,7 @@ const ProfileUser = () => {
 
     return (
         <>
-            <h1>Lista Mascota</h1>
+            <h1>MIS MASCOTAS</h1>
             <div className="listAnimales">
                 <ListPet />
             </div>
