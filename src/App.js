@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import ProfileAdmin from './Containers/ProfileAdmin/ProfileAdmin';
 import store from './service/redux/store';
 import ProfileDoctor from './Containers/ProfileDoctor/ProfileDoctor';
-
+import ProfilePet from './Containers/ProfilePet/ProfilePet';
 
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
             <Route path="/register" element={<Register />} exact />  {/* página de Registro*/}
             <Route path="/profileuser" element={<ProfileUser />} exact />{/* página perfilUsers*/}
             <Route path="/profileadmin" element={<ProfileAdmin />} exact />{/* página perfilAdmin*/}
+            <Route path="/profilePet" element={<ProfilePet/>} exact />{/* página perfilAdmin*/}
             <Route path="/profiledoctor" element={<ProfileDoctor/>} exact />{/* página perfilAdmin*/}
             <Route path="/listallpet" element={<ListAllPets />} exact />{/* página donde muestra todas las mascotas del mismo dueño*/}
             <Route path="/lispet" element={<ListPet />} exact />{/* página donde muestra el perfil de un mascota en particular*/}

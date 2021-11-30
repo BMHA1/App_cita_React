@@ -4,16 +4,24 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
+import { useNavigate } from 'react-router-dom'
 import Boton from '../Boton/Boton';
 
 
 const CardPet = (props) => {
 
+    let navigate = useNavigate()
+    const redirection = () => {
+        console.log("holamundo")
+        navigate('/ProfilePet')
+    }
+
     return (
         <>
             <div>
+
                 <Card sx={{ maxWidth: 200 }}>
-                    <CardActionArea>
+                    <CardActionArea onClick={(() => redirection())}>
                         <CardMedia
                             component="img"
                             height="150"
@@ -42,10 +50,8 @@ const CardPet = (props) => {
                     </CardActions>
                 </Card>
             </div>
-
         </>
     )
-
 }
 
 export default CardPet
