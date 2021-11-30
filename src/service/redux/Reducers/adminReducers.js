@@ -1,7 +1,17 @@
+const admininitial = {
+    token: false,
+    admin: {}
+}
+const adminReducers = (admin = admininitial, action) => {
+   
 
-const adminReducers = (admin = [], action) => {
-    console.log(admin, action)
+    if (action === "ADD_TOKEN_ADMIN") {
+        return {
+            ...admin,
+            admin: action.payload.admin
+        }
+    }
 
-    return admin   
+    return admin
 }
 export default adminReducers

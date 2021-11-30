@@ -19,15 +19,6 @@ export default {
             }
         )
     },
-    addToken: (token) => {
-        return (
-            {
-                type: 'ADD_TOKEN', // es la action que quieres que haga cuando llegue a store
-                payload: {
-                    key: token,
-                }
-            }
-        )
-    }
+ 
 
 }

@@ -5,18 +5,20 @@ import { useState } from 'react';
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import { useNavigate } from 'react-router-dom'
 import './AddPet.scss'
+import { useSelector } from 'react-redux';
 
 const AddPet = () => {
     let navigate = useNavigate()
-    const [loading, setLoading] = useState(false)
+    const user = useSelector((state) => state[user])
     const [error, setError] = useState(false)
 
     const HandelChangeSend = (d) => {
-        setLoading(true)
+        // setLoading(true)
         d.preventDefault()
         const pets = {
             avatar: d.target.avatar.value,
             name: d.target.name.value,
+            userId: user.user.id,
             specie: d.target.specie.value,
             weight: d.target.weight.value,
             age: d.target.age.value,
@@ -29,11 +31,11 @@ const AddPet = () => {
                 let result = await APIConsumer.CreatePets(pets)
                 console.log(result)
                 if (result) navigate('/login')
-                setLoading(false)
+                // setLoading(false)
             } catch (error) {
                 alert(error)
-                setError(true)
-                setLoading(false)
+                // setError(true)
+                // setLoading(false)
             }
         }, 5000);
     }

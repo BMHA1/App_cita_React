@@ -1,0 +1,12 @@
+.contenedor-papito{
+
+    .listpet {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        align-content: center;
+        margin: 2em;
+        justify-content: space-around;
+        
+    }
+}

@@ -3,48 +3,44 @@ import store from '../../service/redux/store'
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import Boton from '../Boton/Boton'
-
-
-
+import { useSelector } from 'react-redux';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 
 
 const Header = () => {
 
-    const [clave, setClave] = useState(false)
-    const [Dasboard, setDasboard] = useState(false)
-    // const [DasboardUser, setDasboardUser] = useState(false)
-    // const [DasboardAdmin, setDasboardAdmin] = useState(false)
-    // const [DasboardDoctor, setDasboardDoctor] = useState(false)
+    const user = useSelector((store) => store.user)
+        
+    console.log(user)
+    // const admin = useSelector((store) => store.admin)
+    // const doctor = useSelector((store) => store.doctor)
 
-    useEffect(() => {
-        console.log("header")
-        let variable = (store.getState().user.token)
-        console.log(variable)
-
-        store.subscribe(() => {
-            setClave(store.getState().user.token)
-            console.log(clave)
-        })
-    });
 
     return (
         <>
             <div className='header'>
+
                 <div className='logo'></div >
-                <div className='panelCentral'></div >
                 <ul>
-                    <Boton variant="outlined" size="small" margin="normal">
+                    {!user.token && <Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/">Inicio</NavLink>
+                    </Boton>}
+                    {!user.token && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/login">Entrar</NavLink>
-                    </Boton>
-                    <Boton variant="outlined" size="small" margin="normal">
+                    </Boton>}
+                    {!user.token && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
-                    </Boton>
-                    {Dasboard && < Boton variant="outlined" size="small" margin="normal">
+                    </Boton>}
+                    {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Pedir Cita</NavLink>
                     </Boton>}
-                    {Dasboard && < Boton variant="outlined" size="small" margin="normal">
+                    {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Cerrar Sesión</NavLink>
                     </Boton>}
+                    {user.token && <Stack direction="row" >
+                        <Avatar alt="B" src={user.user.avatar} />
+                    </Stack>}
                 </ul>
             </div >
         </>
