@@ -1,7 +1,9 @@
+const url = "http://localhost:5000/appointment"
 export const APIConsumer = {
+    
     CreateAppoinment: async (appoinment) => {
         try {
-            let result = await fetch(`http://localhost:5000/appointment`, {
+            let result = await fetch(url, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -9,7 +11,7 @@ export const APIConsumer = {
                     "date": appoinment.date,
                     "state": appoinment.state,
                     "petIt": appoinment.petIt,
-                    "doctorId": appoinment.password
+                    "doctorId": appoinment.doctorId
 
                 })
             })
