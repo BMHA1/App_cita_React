@@ -1,11 +1,24 @@
 
-const userReducer = (user = [], action) => {
-    // console.log(user + 'userReducer', action)
-    // if (action == "ADD_TOKEN") {
-    //     return (
-    //         user = user.push(action.key)
-    //     )
-    // }
+const userinitial = {
+    token: false,
+    user: {}
+}
+
+const userReducer = (user = userinitial, action) => {
+
+    console.log(action.payload)
+    if (action.type === "ADD_TOKEN") {
+        return {
+            ...user,
+            token: action.payload
+        }
+    }
+    if (action.type === "ADD_USER") {
+        return {
+            ...user,
+            user: action.payload
+        }
+    }
     return user
 }
 export default userReducer

@@ -1,18 +1,26 @@
 .header {
     display: flex;
-    // align-items: right;
-    justify-content: right;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: row;
     background-color: azure;
-    border: red solid 1px;
+    height: 4em;
+    .logo {
+        margin-left: 0.9em;
+        width: 10em;
+        height: 2em;
+        background-image: url(https://veterinariasedavi.com/new/wp-content/uploads/2020/07/logo-clinica-veterinaria-sedavi.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     ul {
+        margin-right: 0.9em;
         gap: 0.5em;
-        margin-right: 1em;
-        border: red solid 1px;
         display: flex;
         justify-content: right;
-       .link{
-        text-decoration: none;
+        .link {
+            text-decoration: none;
         }
     }
 }

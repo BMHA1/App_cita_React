@@ -3,17 +3,18 @@ import './Login.scss'
 import { APIConsumer } from '../../service/Apiconsumer/ApiUser';
 import Boton from "../../Components/Boton/Boton"
 import TextField from '@mui/material/TextField'
-import action from "../../service/redux/Action/ActionUser";
-import { useDispatch } from 'react-redux';
-
+import ActionUser from "../../service/redux/Action/ActionUser";
+import ActionAdmin from '../../service/redux/Action/ActionAdmin';
+import ActionDoctor from '../../service/redux/Action/ActionDoctor';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+import jwt_decode from "jwt-decode"
 
 const Login = (props) => {
+    let navigate = useNavigate()
 
-    // const [clave, setClave] = useState(false)
     const dispatch = useDispatch()
 
-
-    // //enviamos datos y logeamos al usuario 
     const handleSendData = async (e) => {
         e.preventDefault()
         const user = {
@@ -24,14 +25,35 @@ const Login = (props) => {
 
         try {
             let res = await APIConsumer.loginUser(user);
-            if (!res) return dispatch(action.addToken(false))
-            else dispatch(action.addToken(res))
+            console.log(res.token)
+            if (!res.token) return false
+            else {
+                decode(res.token)
+            }
         } catch (error) {
-            alert(error, " hola mundo");
+            alert(error, " es de login");
         }
-
     }
 
+    const decode = (token) => {
+        let jtw = jwt_decode(token);
+        console.log(jtw.role)
+        if (jtw && jtw.role === "user") {
+            dispatch(ActionUser.addToken(token))
+            dispatch(ActionUser.addUser(jtw))
+            navigate('/profileuser')
+        }
+        if (jtw && jtw.role === "admin") {
+            dispatch(ActionAdmin.addTokenAdmin(token)) //ajustar admin
+            dispatch(ActionAdmin.addAdmin(jtw))//ajustar admin
+            navigate('/profileadmin')
+        }
+        if (jtw && jtw.role === "doctor") {
+            navigate('/profiledoctor')
+            dispatch(ActionDoctor.addToken(token)) //ajustar admin
+            dispatch(ActionDoctor.addDoctor(jtw)) //ajustar admin
+        }
+    }
 
     return (
         <div className="Padre">
@@ -64,4 +86,5 @@ const Login = (props) => {
         </div>
     )
 }
+
 export default Login
