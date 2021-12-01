@@ -22,6 +22,7 @@ export const APIConsumer = {
         }
 
     },
+    // (solo admin)
     getAllAppointments: async (id) => {
 
 
@@ -39,9 +40,8 @@ export const APIConsumer = {
             console.log(error)
         }
     },
+
     deleteAppoinment: async (id) => {
-
-
         try {
             const result = await fetch(`http://localhost:9525/appointments/${id}`, {
                 headers: {

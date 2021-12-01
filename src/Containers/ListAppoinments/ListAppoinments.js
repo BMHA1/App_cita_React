@@ -20,6 +20,10 @@ const ListAppoinment = () => {
         // console.log(deleteRentals)
         // setRentals(deleteRentals)
     }
+    const getAppointments= async(id)=>{
+        console.log(id)
+        await APIConsumer.getAllAppointments
+    }
 
     return (
         <>
