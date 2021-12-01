@@ -1,10 +1,12 @@
+import ListAppoinment from "../ListAppoinments/ListAppoinments"
 const ProfilePet = () => {
 
     return (
         <>
             <h1>
-                Soy ProfilePet
+                Mis citas
             </h1>
+            <ListAppoinment />
         </>
     )
 

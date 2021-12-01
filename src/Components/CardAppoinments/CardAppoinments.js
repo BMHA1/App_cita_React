@@ -15,16 +15,22 @@ const CardAppoinments = (props) => {
         console.log("holamundo")
         navigate('/ProfilePet')
     }
-    const modi
+    const modifyAppointments = () => {
+
+    }
+
 
     return (
         <>
             <Boton onClick={((e) => modifyAppointments(e))} >
                 <div>
-                    <span>Nombre mascota: {props.name} </span><br />
-                    <span> Día de la cita{props.title}</span><br />
-                    <span> Estado {props.totalPrice}$</span><br />
-                    <span> doctor: {props.email}</span><br />
+                    <form>
+                        <span> Nombre mascota: {props.name} </span><br />
+                        <span> Día de la cita: {props.date}</span><br />
+                        <span> Estado: {props.state}$</span><br />
+                        <span> doctor: {props.doctor}</span><br />
+                        <div className="delete">{props.boton}</div><br />
+                    </form>
                 </div>
             </Boton>
         </>

@@ -21,5 +21,39 @@ export const APIConsumer = {
             console.log(error)
         }
 
+    },
+    getAllAppointments: async (id) => {
+
+
+        try {
+            const result = await fetch(`http://localhost:9525/appointments/${id}`, {
+                headers: {
+                    "Authorization": ""
+                },
+                method: "GET"
+            })
+            console.log(result)
+            return await result.json()
+
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    deleteAppoinment: async (id) => {
+
+
+        try {
+            const result = await fetch(`http://localhost:9525/appointments/${id}`, {
+                headers: {
+                    "Authorization": ""
+                },
+                method: "GET"
+            })
+            console.log(result)
+            return await result.json()
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

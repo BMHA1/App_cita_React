@@ -8,7 +8,7 @@ const ListPet = () => {
     console.log(pet)
     return (
         <>
-            <div className="contenedor-papito">
+            <div className="contenedor-principal">
                 <div className="listpet">
                     {pet.map((e, i) => {
                         return <CardPet
