@@ -37,19 +37,19 @@ const AddAppointments = () => {
         d.preventDefault()
         console.log("aqui estoy")
         console.log(d.target.date.value)
-        console.log(d.target[0].value)
-        console.log(d.target[1].value)
+        console.log(typeof d.target[0].value)
+        console.log(typeof d.target[1].value)
         const appoinment = {
 
             date: d.target.date.value,
             state: "Pending",
-            petIt: d.target[0].value,
-            doctorid: d.target[1].value,
+            petIt: d.target[0].value, 
+            doctorId: d.target[1].value,
 
         }
         setTimeout(async () => {
             try {
-                let result = await APIConsumer.CreateAppoinment(appoinment)
+                let result = await APIConsumer.CreateAppoinment(appoinment,user.token)
                 console.log(result)
                 // setLoading(false)
             } catch (error) {
