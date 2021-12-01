@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 const AddAppointments = () => {
     const pets = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
-    // const dc = [{ name: "julio" }, { name: "mario" }, { name: "pedro" }]
+
 
     const [dc, setDc] = useState([])
 
@@ -26,36 +26,38 @@ const AddAppointments = () => {
 
         let result = await APIConsumer.getAllDoctors(user.token)
         console.log(result.Data)
+        
+        console.table(result.Data)
+        console.table(pets)
         setDc(result.Data)
     }
-
+ 
 
     const HandelChangeSend = (d) => {
         d.preventDefault()
         console.log("aqui estoy")
-        console.log(d.target[1].value)
         console.log(d.target.date.value)
-        console.log(d.target.doctor.value)
-        console.log(d.target.pets.value)
+        console.log(d.target[0].value)
+        console.log(d.target[1].value)
         const appoinment = {
 
             date: d.target.date.value,
             state: "Pending",
-            petIt: d.target.pets.value,
-            doctorid: d.target.doctor.value,
+            petIt: d.target[0].value,
+            doctorid: d.target[1].value,
 
         }
-        // setTimeout(async () => {
-        //     try {
-        //         let result = await APIConsumer.CreateAppoinment(appoinment)
-        //         console.log(result)
-        //         // setLoading(false)
-        //     } catch (error) {
-        //         console.log(error)
-        //         // setError(true)
-        //         // setLoading(false)
-        //     }
-        // }, 5000);
+        setTimeout(async () => {
+            try {
+                let result = await APIConsumer.CreateAppoinment(appoinment)
+                console.log(result)
+                // setLoading(false)
+            } catch (error) {
+                console.log(error)
+                // setError(true)
+                // setLoading(false)
+            }
+        }, 5000);
     }
 
     return (
@@ -67,10 +69,18 @@ const AddAppointments = () => {
                     <Grid className="Grid-appoinments" container spacing={1} columns={2} justifyContent="center" >
                         <Grid columnSpacing={2} >
                             <Grid item xs={5} className="doctor">
+                                <label>Doctor : </label>
+                                <select>
+                                    {dc.map((name) => {
+                                        return <option key={name.id} value={name.id}>{name.name}</option>
+                                    })}
+                                </select>
+                            </Grid>
+                            <Grid item xs={5} className="pets">
                                 <label>Pets : </label>
-                                <select name="pets">
-                                    {pets.map((name) => {
-                                        return <option name="pets">{name.name}</option>
+                                <select >
+                                    {pets.map((pet) => {
+                                        return <option key={pet.id} value={pet.id}>{pet.name}</option>
                                     })}
                                 </select>
                             </Grid>
@@ -80,14 +90,6 @@ const AddAppointments = () => {
                                     name='date'
                                     margin="dense"
                                     required />
-                            </Grid>
-                            <Grid item xs={5} className="doctor">
-                                <label>Doctor : </label>
-                                <select>
-                                    {dc.map((name) => {
-                                        return <option name="doctor">{name.name}{'  '}{name.username}</option>
-                                    })}
-                                </select>
                             </Grid>
                         </Grid>
                     </Grid>
