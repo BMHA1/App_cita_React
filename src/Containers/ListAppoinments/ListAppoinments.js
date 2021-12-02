@@ -1,28 +1,31 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CardAppoinments from "../../Components/CardAppoinments/CardAppoinments"
 import { APIConsumer } from "../../service/Apiconsumer/ApiAppoinments"
 import Boton from "../../Components/Boton/Boton"
-import { useSelector } from "react-redux"
+import ActionAppointments from "../../service/redux/Action/ActionAppointments"
+import { useDispatch, useSelector } from 'react-redux';
 
 const ListAppoinment = () => {
-    const [loading, setLoading] = useState (false)
-    const appoinment= useSelector((store)=>store.appoinment)
-
+    const [loading, setLoading] = useState(false)
+    const appoinment = useSelector((store) => store.appointments)
+    const user = useSelector((store) => store.user)
+     const dispatch = useDispatch()
 
     const deleteAppointments = async (id) => {
         console.log(id)
         await APIConsumer.deleteAppoinment(id)
-        console.log("despues del await")
+
         setLoading(true)
-        // getAllAppoinment()
 
-
-        // console.log(deleteRentals)
-        // setRentals(deleteRentals)
     }
-    const getAppointments= async(id)=>{
+    useEffect(() => {
+        console.log(user.user.id)
+        getAppointments(user.user.id)
+    }, [])
+    const getAppointments = async (id) => {
         console.log(id)
-        await APIConsumer.getAllAppointments
+        let resul = await APIConsumer.getAllAppointments(id)
+        dispatch(ActionAppointments.addAppointment(resul))
     }
 
     return (

@@ -1,9 +1,9 @@
 export default {
 
-    addProductsCar: (productos) => {
+    addAppointment: (appoinment) => {
         return (
             {
-                type: 'ADD_BUY', // es la action que quieres que haga cuando llegue a store
+                type: 'ADD_APPOINTMENT', // es la action que quieres que haga cuando llegue a store
                 payload: productos
             }
         )
