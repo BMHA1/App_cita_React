@@ -33,7 +33,6 @@ export const APIConsumer = {
     getAllPets: async (user) => {
         let id = user.user.data
         let token = user.token
-        console.log(id)
         try {
             const result = await fetch(url + "/allpets/" + id, {
                 headers: {
@@ -49,5 +48,22 @@ export const APIConsumer = {
             console.log(error)
         }
     },
+    deletePets: async (id) => {
+                    console.log(id)
+        try {
+            const result = await fetch(url + "/delete/"+id, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: "GET"
+            })
+            const data = await result.json();
+            console.log(data);
+            return data
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 

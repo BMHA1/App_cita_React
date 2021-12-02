@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import ActionPets from '../../service/redux/Action/ActionPets';
 import React, { useEffect } from 'react';
+import Boton from '../../Components/Boton/Boton';
 
 const ListPet = () => {
     const pets = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
-    
-   
+
+
     const dispatch = useDispatch()
-    console.table(user)
-    console.log(pets)
+
 
 
     useEffect(() => {
@@ -30,6 +30,11 @@ const ListPet = () => {
         }
 
     }
+    const deleteAppointments = async (e) => {
+        console.log(e)
+        await APIConsumer.deletePets(e)
+        getpets(user)
+    }
 
     return (
         <>
@@ -41,7 +46,8 @@ const ListPet = () => {
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}
-                            age={e.age} />
+                            age={e.age}
+                            boton={<Boton onClick={(data) => deleteAppointments(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
             </div>

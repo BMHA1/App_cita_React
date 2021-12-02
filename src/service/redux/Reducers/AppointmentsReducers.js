@@ -1,7 +1,10 @@
 
 const appointmentsReducers = (appointments = [], action) => {
-   
 
-    return appointments 
+    if (action.type === "ADD_APPOINTMENT") {
+     
+        return appointments = (action.payload)
+    }
+    return appointments
 }
 export default appointmentsReducers

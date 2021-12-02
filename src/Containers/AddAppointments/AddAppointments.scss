@@ -1,0 +1,24 @@
+
+.contenedorPadre-Appointment{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    .Container-appoints {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .Grid-appoinments {
+           
+            select {
+                border: 1px solid rgb(156, 154, 153);
+                border-radius: 0.3em;
+                margin: 0.5em;
+                height: 2.5em;
+                width: 8em;
+                font-family: "Roboto";
+                font-size: initial;
+            }
+        }
+    }
+}
