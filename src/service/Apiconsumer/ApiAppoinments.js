@@ -4,8 +4,7 @@ export const APIConsumer = {
 
     // (solo admin)
     getAllAppointments: async (id) => {
-
-
+        console.log(id)
         try {
             const result = await fetch(url + id, {
                 headers: {
@@ -24,14 +23,15 @@ export const APIConsumer = {
 
     deleteAppoinment: async (id) => {
         try {
-            const result = await fetch(`http://localhost:9525/appointments/${id}`, {
+            const result = await fetch(url + id, {
                 headers: {
-                    "Authorization": ""
+                    'Content-Type': 'application/json'
                 },
                 method: "GET"
             })
-            console.log(result)
-            return await result.json()
+            const data = await result.json();
+            console.log(data);
+            return data
 
         } catch (error) {
             console.log(error)

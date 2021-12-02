@@ -21,11 +21,11 @@ const Login = (props) => {
             email: e.target.email.value,
             password: e.target.password.value
         }
-        console.table(user)
+    
 
         try {
             let res = await APIConsumer.loginUser(user);
-            console.log(res.token)
+           
             if (!res.token) return false
             else {
                 decode(res.token)
@@ -37,7 +37,7 @@ const Login = (props) => {
 
     const decode = (token) => {
         let jtw = jwt_decode(token);
-        console.log(jtw.role)
+     
         if (jtw && jtw.role === "user") {
             dispatch(ActionUser.addToken(token))
             dispatch(ActionUser.addUser(jtw))

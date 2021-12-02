@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 import Boton from '../../Components/Boton/Boton';
 import './AddAppointments.scss'
 // import { useNavigate } from 'react-router-dom'
-import Select from '@mui/material/Select';
+
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';

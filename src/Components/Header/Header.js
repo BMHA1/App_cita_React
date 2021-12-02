@@ -1,18 +1,19 @@
 import './Header.scss'
-import store from '../../service/redux/store'
-import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import Boton from '../Boton/Boton'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import ActionUser from '../../service/redux/Action/ActionUser';
 
 
 const Header = () => {
 
     const user = useSelector((store) => store.user)
-        
-    console.log(user)
+    const dispatch = useDispatch()
+    const SignOff = () => {
+        dispatch(ActionUser.addToken(false))
+    }
     // const admin = useSelector((store) => store.admin)
     // const doctor = useSelector((store) => store.doctor)
     return (
@@ -33,9 +34,10 @@ const Header = () => {
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
-                    {user.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/register">Cerrar Sesión</NavLink>
+                    {user.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/">Cerrar Sesión</NavLink>
                     </Boton>}
+
                     {user.token && <Stack direction="row" >
                         <Avatar alt="B" src={user.user.avatar} />
                     </Stack>}

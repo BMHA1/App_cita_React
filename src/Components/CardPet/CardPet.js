@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,12 +6,10 @@ import { CardActionArea, CardActions } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import Boton from '../Boton/Boton';
 
-
 const CardPet = (props) => {
 
     let navigate = useNavigate()
     const redirection = () => {
-        console.log("holamundo")
         navigate('/ProfilePet')
     }
 
@@ -20,7 +17,7 @@ const CardPet = (props) => {
         <>
             <div>
 
-                <Card sx={{ maxWidth: 200 }}>
+                <Card sx={{ maxWidth: 210}}>
                     <CardActionArea onClick={(() => redirection())}>
                         <CardMedia
                             component="img"
@@ -41,9 +38,8 @@ const CardPet = (props) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Boton size="small" color="primary">
-                            Eliminar
-                        </Boton>
+                        <div className="delete">{props.boton}</div>
+
                         <Boton size="small" color="primary">
                             Pedir Cita
                         </Boton>

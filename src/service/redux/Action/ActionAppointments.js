@@ -1,12 +1,11 @@
 export default {
 
     addAppointment: (appoinment) => {
-        return (
-            {
+        return {
                 type: 'ADD_APPOINTMENT', // es la action que quieres que haga cuando llegue a store
-                payload: productos
+                payload: appoinment
             }
-        )
+      
     },
 
     deleteProductsCar: (id) => {
