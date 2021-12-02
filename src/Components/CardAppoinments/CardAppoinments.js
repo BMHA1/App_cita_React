@@ -10,25 +10,25 @@ const CardAppoinments = (props) => {
     //     navigate('/ProfilePet')
     // }
     const modifyAppointments = () => {
-
+        console.log("moficando cita")
     }
 
 
     return (
         <>
-           
-                <button  onClick={((e) => modifyAppointments(e))} >
-                    <div>
-                        <form>
-                            <span> Nombre mascota: {props.name} </span><br />
-                            <span> Día de la cita: {props.date}</span><br />
-                            <span> Estado: {props.state}</span><br />
-                            <span> Doctor: {props.doctor}</span><br />
-                            <div className="delete">{props.boton}</div><br />
-                        </form>
-                    </div>
-                </button >
-           
+
+            <button onClick={((e) => modifyAppointments(e))} >
+                <div>
+                    <form>
+                        <span> Nombre de mascota: {props.name} </span><br />
+                        <span> Día de la cita: {props.date}</span><br />
+                        <span> Estado: {props.state}</span><br />
+                        <span> Doctor: {props.doctor}</span><br />
+                        <div className="delete-b">{props.boton}</div><br />
+                    </form>
+                </div>
+            </button >
+
         </>
     )
 }

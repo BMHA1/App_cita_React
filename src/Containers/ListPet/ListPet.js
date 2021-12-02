@@ -8,11 +8,7 @@ import Boton from '../../Components/Boton/Boton';
 const ListPet = () => {
     const pets = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
-
-
     const dispatch = useDispatch()
-
-
 
     useEffect(() => {
         getpets(user)
@@ -30,7 +26,7 @@ const ListPet = () => {
         }
 
     }
-    const deleteAppointments = async (e) => {
+    const deletePet = async (e) => {
         console.log(e)
         await APIConsumer.deletePets(e)
         getpets(user)
@@ -47,14 +43,11 @@ const ListPet = () => {
                             name={e.name}
                             gender={e.gender}
                             age={e.age}
-                            boton={<Boton onClick={(data) => deleteAppointments(e.id)}>ELIMINAR</Boton>} />
+                            boton={<Boton onClick={(data) => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
             </div>
-
         </>
     )
-
-
 }
 export default ListPet

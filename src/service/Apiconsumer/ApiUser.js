@@ -1,9 +1,13 @@
 
+
+const url = `http://localhost:5000/user/login`
+
+
 export const APIConsumer = {
     //    
     loginUser: async (user) => {
         try {
-            let result = await fetch(`http://localhost:5000/user/login`, {
+            let result = await fetch(url, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -23,7 +27,7 @@ export const APIConsumer = {
     //adaptar método para la nueva api
     CreateUser: async (user) => {
         try {
-            let result = await fetch(`http://localhost:5000/user`, {
+            let result = await fetch(url, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -46,4 +50,37 @@ export const APIConsumer = {
             console.log(error)
         }
     },
+    getAllUsers: async () => {
+        try {
+            let result = await fetch(url + '/all', {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json' },
+            })
+
+            const users = await result.json();
+            console.log(users);
+            return users
+        } catch (error) {
+
+            console.log(error)
+        }
+    },
+    deleteUsers: async (id) => {
+        console.log(id)
+        try {
+            const result = await fetch(url + id, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: "GET"
+            })
+            const data = await result.json();
+            console.log(data);
+            return data
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 }

@@ -1,10 +1,7 @@
 const url = "http://localhost:5000/appointment/"
 export const APIConsumer = {
-
-
-    // (solo admin)
+   
     getAllAppointments: async (id) => {
-        console.log(id)
         try {
             const result = await fetch(url + id, {
                 headers: {

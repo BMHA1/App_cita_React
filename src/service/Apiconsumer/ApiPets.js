@@ -49,9 +49,9 @@ export const APIConsumer = {
         }
     },
     deletePets: async (id) => {
-                    console.log(id)
+        console.log(id)
         try {
-            const result = await fetch(url + "/delete/"+id, {
+            const result = await fetch(url + "/delete/" + id, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
