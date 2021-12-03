@@ -1,13 +1,19 @@
+import ListUsers from '../ListUser/ListUser'
+import './ProfileAdmin.scss'
+import Typography from '@mui/material/Typography';
 const ProfileAdmin = () => {
+
+
+
 
     return (
         <>
-            <h1>
-                Soy ProfileAdmin
-            </h1>
+            <Typography variant="h3" component="div" gutterBottom>
+                MI CLIENTES
+            </Typography>
+
+            <ListUsers />
         </>
     )
-
-
 }
 export default ProfileAdmin

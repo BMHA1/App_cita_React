@@ -1,7 +1,8 @@
 
 const userinitial = {
     token: false,
-    user: {}
+    user: {},
+    users: {}
 }
 
 const userReducer = (user = userinitial, action) => {
@@ -17,6 +18,13 @@ const userReducer = (user = userinitial, action) => {
         return {
             ...user,
             user: action.payload
+        }
+
+    }
+    if (action.type === "ADD_ALL_USER") {
+        return {
+            ...user,
+            users: action.payload
         }
     }
     return user

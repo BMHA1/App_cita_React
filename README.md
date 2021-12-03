@@ -71,7 +71,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Título del Proyecto
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_La clinica SEDAVI nos han pedido veterinaria desarrollar el frontend correspondiente al sistema de gestión de citas con un Director y 5 dentistas, que admiten clientes según la disponibilidad de su agenda. En esta aplicación en el caso del Director, podrá ver tanto los registros de los usuarios, como las citas de diarias. También es el único que puede asignar el Roll de administrador a otro usuario, ya que al hacer un nuevo registro por defecto, se crea un usuario nuevo.
+
+
+El cliente, una vez registrado, puede pedir una cita con un médico siempre y cuando la cita esté libre y además tendrá acceso al historial de citas y podrá hacer una visualización de citas futuras._
 
 ## Comenzando 🚀
 
@@ -84,9 +87,12 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
-```
-Da un ejemplo
-```
+De forma predeterminada, el servidor de reacción se ejecutará en el puerto 3000 y el servidor Express se ejecutará en el puerto 5000
+
+
+Una vez que finaliza la composición de Docker Abra una nueva pestaña del navegador http: // localhost: 3000 /
+
+Utilice los usuarios de muestra para ver todas las funcionalidades en curso
 
 ### Instalación 🔧
 

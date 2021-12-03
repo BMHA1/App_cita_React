@@ -4,10 +4,10 @@ import { Grid } from '@mui/material';
 import Boton from '../../Components/Boton/Boton';
 import './AddAppointments.scss'
 // import { useNavigate } from 'react-router-dom'
-
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
+
 const AddAppointments = () => {
     const pets = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
@@ -15,12 +15,9 @@ const AddAppointments = () => {
 
     const [dc, setDc] = useState([])
 
-
-
     useEffect(() => {
         getdoctor()
     }, [])
-
 
     const getdoctor = async () => {
 
@@ -31,7 +28,6 @@ const AddAppointments = () => {
         console.table(pets)
         setDc(result.Data)
     }
-
 
     const HandelChangeSend = (d) => {
         d.preventDefault()

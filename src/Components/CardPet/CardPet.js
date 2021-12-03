@@ -5,11 +5,14 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import Boton from '../Boton/Boton';
+import { useDispatch } from 'react-redux';
+import ActionPets from '../../service/redux/Action/ActionPets';
 
 const CardPet = (props) => {
-
+    let dispatch = useDispatch()
     let navigate = useNavigate()
     const redirection = () => {
+        dispatch(ActionPets.addPets(props))
         navigate('/ProfilePet')
     }
 
@@ -17,7 +20,7 @@ const CardPet = (props) => {
         <>
             <div>
 
-                <Card sx={{ maxWidth: 210}}>
+                <Card sx={{ maxWidth: 210 }}>
                     <CardActionArea onClick={(() => redirection())}>
                         <CardMedia
                             component="img"
@@ -41,7 +44,7 @@ const CardPet = (props) => {
                         <div className="delete">{props.boton}</div>
 
                         <Boton size="small" color="primary">
-                            Pedir Cita
+                            Ver cita
                         </Boton>
                     </CardActions>
                 </Card>
