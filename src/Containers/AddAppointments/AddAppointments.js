@@ -23,9 +23,6 @@ const AddAppointments = () => {
 
         let result = await APIConsumer.getAllDoctors(user.token)
         console.log(result.Data)
-
-        console.table(result.Data)
-        console.table(pets)
         setDc(result.Data)
     }
 

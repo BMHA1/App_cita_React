@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField'
 import { Grid } from '@mui/material';
 import Boton from '../../Components/Boton/Boton';
-import { useState } from 'react';
+
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import { useNavigate } from 'react-router-dom'
 import './AddPet.scss'
@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const AddPet = () => {
     let navigate = useNavigate()
     const user = useSelector((state) => state[user])
-    const [error, setError] = useState(false)
+    
 
     const HandelChangeSend = (d) => {
         // setLoading(true)

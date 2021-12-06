@@ -12,7 +12,8 @@ const ListPet = () => {
 
     useEffect(() => {
         getpets(user)
-    }, [])
+    }, [user])
+    
 
     const getpets = async (e) => {
         console.log("entrando")
@@ -28,7 +29,11 @@ const ListPet = () => {
     }
     const deletePet = async (e) => {
         console.log(e)
-        await APIConsumer.deletePets(e)
+        let resul = await APIConsumer.deletePets(e)
+        if (resul.status == "400") {
+            console.log(resul.message)
+
+        }
         getpets(user)
     }
 
@@ -42,7 +47,7 @@ const ListPet = () => {
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}
-                            age={e.age}
+                            weight={e.age}
                             boton={<Boton onClick={(data) => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>

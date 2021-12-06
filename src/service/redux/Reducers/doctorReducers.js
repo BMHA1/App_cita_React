@@ -4,8 +4,7 @@ const doctorinitial = {
 }
 
 const doctorReducer = (doctor = doctorinitial, action) => {
-    // console.log(doctor + 'doctorReducer', action)
-    // console.log(action.payload)
+    
     if (action === "ADD_TOKEN_DOCTOR") {
         return {
             ...doctor,

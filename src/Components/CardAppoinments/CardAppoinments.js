@@ -1,33 +1,26 @@
 // import { useNavigate } from 'react-router-dom'
-
+import './CardAppoinments.scss'
 
 
 const CardAppoinments = (props) => {
 
-    // let navigate = useNavigate()
-    // const deleteAppointments = () => {
-    //     console.log("holamundo")
-    //     navigate('/ProfilePet')
-    // }
-    const modifyAppointments = () => {
-        console.log("moficando cita")
-    }
-
-
+ 
+   
     return (
         <>
 
-            <button onClick={((e) => modifyAppointments(e))} >
-                <div>
+            <div className='container-cardAppointments' >
+                <div className='cardAppointments'>
                     <form>
                         <span> Nombre de mascota: {props.name} </span><br />
                         <span> Día de la cita: {props.date}</span><br />
                         <span> Estado: {props.state}</span><br />
                         <span> Doctor: {props.doctor}</span><br />
-                        <div className="delete-b">{props.boton}</div><br />
+                        <div className="botones-m">{props.modificar}</div><br />
+                        <div className="botones-d">{props.boton}</div><br />
                     </form>
                 </div>
-            </button >
+            </div >
 
         </>
     )

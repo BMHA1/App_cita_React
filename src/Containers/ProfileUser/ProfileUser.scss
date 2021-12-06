@@ -1,0 +1,9 @@
+.ContainerPrincipal-Appointments {
+    display: flexbox;
+    border: 1px red solid;
+    justify-content: center;
+    gap: 5em;
+    .Container-Appointments {
+        border: 1px red;
+    }
+}
