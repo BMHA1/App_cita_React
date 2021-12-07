@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import Boton from '../Boton/Boton';
 import { useDispatch } from 'react-redux';
 import ActionPets from '../../service/redux/Action/ActionPets';
-
+import './cardPet.scss'
 const CardPet = (props) => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
@@ -22,10 +22,10 @@ const CardPet = (props) => {
 
     return (
         <>
-            <div>
+            <div className='card'>
 
-                <Card sx={{ maxWidth: 210 }}>
-                    <CardActionArea onClick={(() => redirection())}>
+                <Card   sx={{ maxWidth: 210 }}>
+                    <CardActionArea  onClick={(() => redirection())}>
                         <CardMedia
                             component="img"
                             height="150"

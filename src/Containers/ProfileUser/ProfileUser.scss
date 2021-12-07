@@ -4,17 +4,11 @@
     align-items: center;
     flex-direction: column;
     gap: 10em;
-    background-image: url(../../Containers/HomePage/image/curita.png);
-    background-size: 12em 12em;
+    // background-image: url(../../Containers/HomePage/image/curita.png);
+    // background-size: 12em 12em;
     height: 100vh;
-    .Titulo {
-        h1 {
-            color: rgb(12, 4, 43);
-            background-color: azure;
-        }
-    }
+    
     .listAnimales {
-        border: 1px red solid;
         display: flex;
         flex-direction: row;
     }

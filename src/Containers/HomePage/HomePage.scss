@@ -1,34 +1,37 @@
 .containerGeneral-Home {
-    width: 100vmax;
+    width: 99.2vw;
     .containerCentral-Home {
         display: grid;
         grid-template-columns: 1fr 2fr;
+        justify-items: center;
         border: 3px solid black;
         .title-Home {
             height: 20em;
-            width: 40em;
+            margin-left: 1em;
             color: rgba(9, 107, 91, 0.822);
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
             background-color: azure;
             .text-Home {
                 text-align: justify;
                 margin-top: 10em;
-                margin: 0.4em;
+                margin: 1em;
                 color: rgba(13, 17, 16, 0.822);
             }
         }
         .img1 {
-            height: 20em;
-            width: 60em;
+           
+            margin-left: 15em;
+            width: 50vw;
             position: relative;
             background-repeat: no-repeat;
-            background-image: url(https://veterinariasedavi.com/new/wp-content/uploads/2021/11/equipo-cvs-1-min-1024x683.jpg);
+            background-image: url(https://www.hogarmania.com/img/mascotas/mascotas-listados.jpg);
+            background-size:40em 19em;
         }
     }
     .containerServices-Home {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr ;
         justify-items: center;
         align-items: center;
     }
