@@ -17,14 +17,14 @@ const Header = () => {
 
 
 
-// console.log (admin)
-// console.log(user)
+    // console.log (admin)
+    // console.log(user)
 
     const SignOff = () => {
         // console.log("sigOFFF")
         dispatch(ActionUser.addToken(false))
         return setHome(true)
-    
+
     }
 
 
@@ -33,7 +33,7 @@ const Header = () => {
     // console.log(Home)
 
 
-    
+
     useEffect(() => {
         if (user.token) {
             // console.log("dentro del if")
@@ -60,21 +60,21 @@ const Header = () => {
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>}
-                     {user.token && < Boton variant="outlined" size="small" margin="normal">
+                    {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/listpointments">Mis Citas</NavLink>
+                        <NavLink className="link" to="/addpet">Añadir Mascota</NavLink>
                     </Boton>}
                     {user.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Cerrar Sesión</NavLink>
                     </Boton>}
-                    {user.token && <Stack direction="row" >
+                    {user.token && <Stack direction="row">
                         <Avatar alt="B" src={user.user.avatar} />
                     </Stack>}
                     {admin.token && <Stack direction="row" >
                         <Avatar alt="B" src={user.user.avatar} />
-                    </Stack>} 
+                    </Stack>}
                     {/* {admin.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/listpointments">Todas Citas</NavLink>
                     </Boton>}
