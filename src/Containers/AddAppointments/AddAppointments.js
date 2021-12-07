@@ -28,17 +28,15 @@ const AddAppointments = () => {
 
     const HandelChangeSend = (d) => {
         d.preventDefault()
-        console.log("aqui estoy")
-        console.log(d.target.date.value)
-        console.log( d.target[0].value + 'doctor')
-        console.log( d.target[1].value)
+        // console.log("aqui estoy")
+        // console.log(d.target.date.value)
+        // console.log( d.target[0].value + 'doctor')
+        // console.log( d.target[1].value)
         const appoinment = {
-
             date: d.target.date.value,
             state: "Pending",
             petId: d.target[0].value,
             doctorId: d.target[1].value,
-
         }
         setTimeout(async () => {
             try {

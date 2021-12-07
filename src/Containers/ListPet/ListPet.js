@@ -4,6 +4,7 @@ import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import ActionPets from '../../service/redux/Action/ActionPets';
 import React, { useEffect } from 'react';
 import Boton from '../../Components/Boton/Boton';
+import './ListPet.scss'
 
 const ListPet = () => {
     const pets = useSelector((store) => store.pets)
@@ -39,7 +40,7 @@ const ListPet = () => {
 
     return (
         <>
-            <div className="contenedor-principal">
+            
                 <div className="listpet">
                     {pets.map((e, i) => {
                         return <CardPet
@@ -51,7 +52,7 @@ const ListPet = () => {
                             boton={<Boton onClick={(data) => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
-            </div>
+            
         </>
     )
 }
