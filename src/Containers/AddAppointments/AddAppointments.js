@@ -21,11 +21,8 @@ const AddAppointments = () => {
 
     const getdoctor = async () => {
 
-        let result = await APIConsumer.getAllDoctors(user.token)
+        let result = await APIConsumer.getAllDoctors()
         console.log(result.Data)
-
-        console.table(result.Data)
-        console.table(pets)
         setDc(result.Data)
     }
 
@@ -33,13 +30,13 @@ const AddAppointments = () => {
         d.preventDefault()
         console.log("aqui estoy")
         console.log(d.target.date.value)
-        console.log(typeof d.target[0].value)
-        console.log(typeof d.target[1].value)
+        console.log( d.target[0].value + 'doctor')
+        console.log( d.target[1].value)
         const appoinment = {
 
             date: d.target.date.value,
             state: "Pending",
-            petIt: d.target[0].value,
+            petId: d.target[0].value,
             doctorId: d.target[1].value,
 
         }

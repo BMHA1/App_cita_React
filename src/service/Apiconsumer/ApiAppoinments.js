@@ -1,7 +1,8 @@
 const url = "http://localhost:5000/appointment/"
 export const APIConsumer = {
-   
+
     getAllAppointments: async (id) => {
+        
         try {
             const result = await fetch(url + id, {
                 headers: {
@@ -19,6 +20,7 @@ export const APIConsumer = {
     },
 
     deleteAppoinment: async (id) => {
+        console.log(id)
         try {
             const result = await fetch(url + id, {
                 headers: {

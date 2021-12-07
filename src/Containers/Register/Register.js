@@ -33,7 +33,6 @@ const Register = () => {
                 if (result) navigate('/login')
                 setLoading(false)
             } catch (error) {
-                alert(error)
                 setError(true)
                 setLoading(false)
             }

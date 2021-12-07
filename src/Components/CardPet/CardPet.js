@@ -11,8 +11,12 @@ import ActionPets from '../../service/redux/Action/ActionPets';
 const CardPet = (props) => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
+
     const redirection = () => {
-        dispatch(ActionPets.addPets(props))
+
+        console.log(props)
+        const id = props.id
+        dispatch(ActionPets.addPets(id))
         navigate('/ProfilePet')
     }
 
@@ -36,7 +40,7 @@ const CardPet = (props) => {
                                 <span>Sexo:{props.gender}</span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                <span>Edad:{props.age}</span>
+                                <span>Peso: {props.weight} Kg</span>
                             </Typography>
                         </CardContent>
                     </CardActionArea>

@@ -12,13 +12,14 @@ const ListPet = () => {
 
     useEffect(() => {
         getpets(user)
-    }, [])
+    }, [user])
+    
 
     const getpets = async (e) => {
-        console.log("entrando")
+        // console.log("entrando")
         try {
             let res = await APIConsumer.getAllPets(e);
-            console.log(res.Data)  // deberiamos recibir un array de objectos de cachorritos
+            // console.log(res.Data)  // deberiamos recibir un array de objectos de cachorritos
             dispatch(ActionPets.addPets(res.Data))
 
         } catch (error) {
@@ -27,8 +28,12 @@ const ListPet = () => {
 
     }
     const deletePet = async (e) => {
-        console.log(e)
-        await APIConsumer.deletePets(e)
+        // console.log(e)
+        let resul = await APIConsumer.deletePets(e)
+        if (resul.status == "400") {
+            console.log(resul.message)
+
+        }
         getpets(user)
     }
 
@@ -38,11 +43,11 @@ const ListPet = () => {
                 <div className="listpet">
                     {pets.map((e, i) => {
                         return <CardPet
-                            id={i}
+                            id={e.id}
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}
-                            age={e.age}
+                            weight={e.age}
                             boton={<Boton onClick={(data) => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>

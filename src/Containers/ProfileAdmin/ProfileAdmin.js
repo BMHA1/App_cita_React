@@ -11,8 +11,8 @@ const ProfileAdmin = () => {
             <Typography variant="h3" component="div" gutterBottom>
                 MI CLIENTES
             </Typography>
-
-            <ListUsers />
+{/* 
+            <ListUsers /> */}
         </>
     )
 }

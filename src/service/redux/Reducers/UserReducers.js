@@ -7,7 +7,7 @@ const userinitial = {
 
 const userReducer = (user = userinitial, action) => {
 
-    console.log(action.payload)
+    // console.log(action.payload)
     if (action.type === "ADD_TOKEN") {
         return {
             ...user,

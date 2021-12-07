@@ -41,7 +41,7 @@ export const APIConsumer = {
                 method: "GET"
             })
             const pets = await result.json()
-            console.log(pets)
+            console.log(pets.Data)
             return pets
 
         } catch (error) {
