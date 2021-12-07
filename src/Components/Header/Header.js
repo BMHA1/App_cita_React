@@ -17,11 +17,11 @@ const Header = () => {
 
 
 
-console.log (admin)
-console.log(user)
+// console.log (admin)
+// console.log(user)
 
     const SignOff = () => {
-        console.log("sigOFFF")
+        // console.log("sigOFFF")
         dispatch(ActionUser.addToken(false))
         return setHome(true)
     
@@ -30,20 +30,20 @@ console.log(user)
 
 
 
-    console.log(Home)
+    // console.log(Home)
 
 
     
     useEffect(() => {
         if (user.token) {
-            console.log("dentro del if")
+            // console.log("dentro del if")
             return setHome(false)
         }
 
     })
 
 
-    console.log(Home)
+    // console.log(Home)
 
     return (
         <>

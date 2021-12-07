@@ -43,7 +43,7 @@ export const APIConsumer = {
             })
 
             const token = await result.json();
-            console.log(token);
+            // console.log(token);
             return token
         } catch (error) {
 
@@ -58,7 +58,7 @@ export const APIConsumer = {
             })
 
             const users = await result.json();
-            console.log(users);
+            // console.log(users);
             return users
         } catch (error) {
 
@@ -75,7 +75,7 @@ export const APIConsumer = {
                 method: "GET"
             })
             const data = await result.json();
-            console.log(data);
+            // console.log(data);
             return data
 
         } catch (error) {

@@ -11,8 +11,10 @@ import ActionPets from '../../service/redux/Action/ActionPets';
 const CardPet = (props) => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
-    
+
     const redirection = () => {
+
+        console.log(props)
         const id = props.id
         dispatch(ActionPets.addPets(id))
         navigate('/ProfilePet')

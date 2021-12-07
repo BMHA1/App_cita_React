@@ -5,7 +5,7 @@ import Boton from "../../Components/Boton/Boton"
 import TextField from '@mui/material/TextField'
 import ActionUser from "../../service/redux/Action/ActionUser";
 import ActionAdmin from '../../service/redux/Action/ActionAdmin';
-import ActionDoctor from '../../service/redux/Action/ActionDoctor';
+// import ActionDoctor from '../../service/redux/Action/ActionDoctor';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import jwt_decode from "jwt-decode"
@@ -41,7 +41,6 @@ const Login = (props) => {
 
         switch (jtw.role) {
             case "user":
-                console.log('soy un user')
                 dispatch(ActionUser.addToken(token))
                 dispatch(ActionUser.addUser(jtw))
                 navigate('/profileuser')

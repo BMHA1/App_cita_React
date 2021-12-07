@@ -16,10 +16,10 @@ const ListPet = () => {
     
 
     const getpets = async (e) => {
-        console.log("entrando")
+        // console.log("entrando")
         try {
             let res = await APIConsumer.getAllPets(e);
-            console.log(res.Data)  // deberiamos recibir un array de objectos de cachorritos
+            // console.log(res.Data)  // deberiamos recibir un array de objectos de cachorritos
             dispatch(ActionPets.addPets(res.Data))
 
         } catch (error) {
@@ -28,7 +28,7 @@ const ListPet = () => {
 
     }
     const deletePet = async (e) => {
-        console.log(e)
+        // console.log(e)
         let resul = await APIConsumer.deletePets(e)
         if (resul.status == "400") {
             console.log(resul.message)
@@ -43,7 +43,7 @@ const ListPet = () => {
                 <div className="listpet">
                     {pets.map((e, i) => {
                         return <CardPet
-                            id={i}
+                            id={e.id}
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}

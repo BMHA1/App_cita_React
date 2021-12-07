@@ -1,16 +1,16 @@
 const url = "http://localhost:5000/doctor"
 export const APIConsumer = {
     getAllDoctors: async (token) => {
-        console.log(token)
+        // console.log(token)
         try {
             const result = await fetch(url + '/all', {
                 headers: {
-                    "Authorization": token
+                    'Content-Type': 'application/json'
                 },
                 method: "GET"
             })
             const doctors = await result.json()
-            console.log(doctors)
+            // console.log(doctors)
             return doctors
 
         } catch (error) {
@@ -27,13 +27,13 @@ export const APIConsumer = {
 
                     "date": appoinment.date,
                     "state": appoinment.state,
-                    "petId": appoinment.petIt,
+                    "petId": appoinment.petId,
                     "doctorId": appoinment.doctorId
 
                 })
             })
             const data = await result.json();
-            console.log(data);
+            // console.log(data);
             return data
         } catch (error) {
 
