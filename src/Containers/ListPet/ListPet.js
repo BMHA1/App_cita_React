@@ -24,12 +24,12 @@ const ListPet = () => {
             dispatch(ActionPets.addPets(res.Data))
 
         } catch (error) {
-            alert(error, " es de pets");
+            alert(error, " es de appointmest");
         }
 
     }
     const deletePet = async (e) => {
-        // console.log(e)
+        console.log('hola pets')
         let resul = await APIConsumer.deletePets(e)
         if (resul.status == "400") {
             console.log(resul.message)
@@ -40,19 +40,17 @@ const ListPet = () => {
 
     return (
         <>
-            
                 <div className="listpet">
-                    {pets.map((e, i) => {
+                    {pets?.map((e, i) => {
                         return <CardPet
                             id={e.id}
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}
                             weight={e.age}
-                            boton={<Boton onClick={(data) => deletePet(e.id)}>ELIMINAR</Boton>} />
+                            boton={<Boton onClick={() => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
-            
         </>
     )
 }

@@ -8,8 +8,6 @@ import { CardActionArea, CardActions } from '@mui/material';
 
 const CardAppo = (props) => {
 
-
-
     return (
         <>
             <div className='container-cardAppointments' >

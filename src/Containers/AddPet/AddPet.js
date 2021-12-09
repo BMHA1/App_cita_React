@@ -43,6 +43,7 @@ const AddPet = () => {
 
     return (
         <>
+        <h1>registra tu mascota</h1>
             <form onSubmit={(d) => HandelChangeSend(d)} >
                 <div className="Container-add-pet">
                     <Grid className="GridPadre-pet" container spacing={1} columns={2} justifyContent="center" >

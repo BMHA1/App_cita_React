@@ -20,13 +20,12 @@ export const APIConsumer = {
     },
 
     deleteAppoinment: async (id) => {
-        console.log(id)
         try {
-            const result = await fetch(url + id, {
+            const result = await fetch(url + '/deleteone/'+id, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                method: "GET"
+                method: "DELETE"
             })
             const data = await result.json();
             console.log(data);
