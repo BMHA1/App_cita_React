@@ -80,6 +80,7 @@ const ListAppoinments = () => {
                     {appoinment?.Data?.map((e, i) => {
                         return <CardAppo
                             key={i}
+                            id={e.id}
                             name={e.name}
                             date={e.date}
                             state={e.state}

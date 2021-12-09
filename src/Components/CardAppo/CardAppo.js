@@ -15,9 +15,9 @@ const CardAppo = (props) => {
                     <Card sx={{ maxWidth: 210 }}>
                         <CardActionArea>
                             <CardContent>
-                                {/* <Typography gutterBottom variant="h5" component="div">
-                                {props.name}
-                            </Typography> */}
+                                <Typography variant="body2" color="text.secondary">
+                                    <span>Id cita: {props.id}</span>
+                                </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     <span>Día de la cita: {props.date}</span>
                                 </Typography>

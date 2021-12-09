@@ -20,8 +20,9 @@ export const APIConsumer = {
     },
 
     deleteAppoinment: async (id) => {
+        console.log('entrando al fetch')
         try {
-            const result = await fetch(url + '/deleteone/'+id, {
+            const result = await fetch(url + 'deleteone/'+id, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
