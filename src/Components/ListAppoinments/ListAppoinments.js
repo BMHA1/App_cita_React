@@ -17,7 +17,7 @@ const ListAppoinments = () => {
     const dispatch = useDispatch()
 
 
-     const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 
     const getAppointments = (id) => {
@@ -43,9 +43,9 @@ const ListAppoinments = () => {
 
     const deleteAppointments = (id) => {
         setLoading(true)
-        setTimeout( async () => {
+        setTimeout(async () => {
             try {
-                console.log( id +'estoy eliminando')
+                console.log(id + 'estoy eliminando')
                 await APIConsumer.deleteAppoinment(id)
                 getAppointments(pet)
                 setLoading(false)
@@ -74,8 +74,7 @@ const ListAppoinments = () => {
                 LISTA DE CITAS
             </Typography >
             {error && <h1>¡I'm sorry, something has happened!</h1>}
-            {loading ? <h1>Loading...</h1>:
-            <div className='ContainerPrincipal-Appointments'>
+            {loading ? <h1>Loading...</h1> :
                 <div className='ContainerAppointments'>
                     {appoinment?.Data?.map((e, i) => {
                         return <CardAppo
@@ -85,12 +84,12 @@ const ListAppoinments = () => {
                             date={e.date}
                             state={e.state}
                             doctor={e.doctorId}
-                            boton={<Boton onClick={(() => deleteAppointments(e.id))}>ELIMINAR</Boton>}
+                            eliminar={<Boton onClick={(() => deleteAppointments(e.id))}>ELIMINAR</Boton>}
                             modificar={<Boton onClick={(() => modifyAppointments(e.id))} >MODIFICAR</Boton>}
                         />
                     })}
-                </div>
-            </div>}
+                </div>}
+
         </>
     )
 }

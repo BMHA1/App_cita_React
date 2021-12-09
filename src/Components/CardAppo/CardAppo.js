@@ -10,39 +10,30 @@ const CardAppo = (props) => {
 
     return (
         <>
-            <div className='container-cardAppointments' >
-                <div className='cardAppointments'>
-                    <Card sx={{ maxWidth: 210 }}>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography variant="body2" color="text.secondary">
-                                    <span>Id cita: {props.id}</span>
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    <span>Día de la cita: {props.date}</span>
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    <span>Estado: {props.state} </span>
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    <span>Doctor: {props.doctor} </span>
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <div className="delete">{props.boton}</div>
-                        </CardActions>
-                    </Card>
-                    {/* <form> */}
-                    {/* <span> Nombre de mascota: {props.name} </span><br /> */}
-                    {/* <span> Día de la cita: {props.date}</span><br />
-                        <span> Estado: {props.state}</span><br />
-                        <span> Doctor: {props.doctor}</span><br /> */}
-                    {/* <div className="botones-m">{props.modificar}</div><br />
-                        <div className="botones-d">{props.boton}</div><br /> */}
-                    {/* </form> */}
-                </div>
-            </div >
+            
+                <Card sx={{ maxWidth: 210 }}>
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography variant="body2" color="text.secondary">
+                                <span>Id cita: {props.id}</span>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                <span>Día de la cita: {props.date}</span>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                <span>Estado: {props.state} </span>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                <span>Doctor: {props.doctor} </span>
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <div className="delete">{props.eliminar}</div>
+                        <div className="modify">{props.modificar}</div>
+                    </CardActions>
+                </Card>
+            
         </>
     )
 }
