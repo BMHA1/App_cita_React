@@ -6,6 +6,9 @@ import ActionAppointments from '../../service/redux/Action/ActionAppointments'
 import Boton from "../Boton/Boton"
 import { useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
+import './ListAppoinments.scss'
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 const ListAppoinments = () => {
 
@@ -53,7 +56,7 @@ const ListAppoinments = () => {
                 setError(true)
                 setLoading(false)
             }
-        }, 3000);
+        }, 9000);
     }
 
     const modifyAppointments = (id) => {
@@ -73,8 +76,10 @@ const ListAppoinments = () => {
             < Typography variant="h3" component="div" gutterBottom >
                 LISTA DE CITAS
             </Typography >
-            {error && <h1>¡I'm sorry, something has happened!</h1>}
-            {loading ? <h1>Loading...</h1> :
+            {error && <Error/>}
+            {loading ?
+                <Loading />
+                :
                 <div className='ContainerAppointments'>
                     {appoinment?.Data?.map((e, i) => {
                         return <CardAppo

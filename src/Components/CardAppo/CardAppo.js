@@ -10,7 +10,6 @@ const CardAppo = (props) => {
 
     return (
         <>
-            
                 <Card sx={{ maxWidth: 210 }}>
                     <CardActionArea>
                         <CardContent>

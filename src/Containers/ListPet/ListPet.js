@@ -47,7 +47,7 @@ const ListPet = () => {
                             avatar={e.avatar}
                             name={e.name}
                             gender={e.gender}
-                            weight={e.age}
+                            weight={e.weight}
                             boton={<Boton onClick={() => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
