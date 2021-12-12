@@ -56,7 +56,7 @@ const ListAppoinments = () => {
                 setError(true)
                 setLoading(false)
             }
-        }, 9000);
+        }, 2000);
     }
 
     const modifyAppointments = (id) => {
@@ -68,7 +68,7 @@ const ListAppoinments = () => {
                 setError(true)
                 setLoading(false)
             }
-        }, 1);
+        }, 2000);
     }
 
     return (
@@ -76,7 +76,7 @@ const ListAppoinments = () => {
             < Typography variant="h3" component="div" gutterBottom >
                 LISTA DE CITAS
             </Typography >
-            {error && <Error/>}
+            {error && <Error />}
             {loading ?
                 <Loading />
                 :
@@ -94,7 +94,6 @@ const ListAppoinments = () => {
                         />
                     })}
                 </div>}
-
         </>
     )
 }

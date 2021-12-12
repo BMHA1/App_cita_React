@@ -15,40 +15,21 @@ const Header = () => {
     const [Home, setHome] = useState(true)
     const dispatch = useDispatch()
 
-
-
-// console.log (admin)
-// console.log(user)
-
     const SignOff = () => {
         // console.log("sigOFFF")
         dispatch(ActionUser.addToken(false))
         return setHome(true)
-    
     }
 
-
-
-
-    // console.log(Home)
-
-
-    
     useEffect(() => {
-        if (user.token) {
-            // console.log("dentro del if")
+        if (user.token || admin) {
             return setHome(false)
         }
-
     })
-
-
-    // console.log(Home)
 
     return (
         <>
             <div className='header'>
-
                 <div className='logo'></div >
                 <ul>
                     {Home && <Boton variant="outlined" size="small" margin="normal">
@@ -60,7 +41,7 @@ const Header = () => {
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>}
-                     {user.token && < Boton variant="outlined" size="small" margin="normal">
+                    {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
@@ -77,8 +58,8 @@ const Header = () => {
                     </Stack>}
                     {admin.token && <Stack direction="row" >
                         <Avatar alt="B" src={user.user.avatar} />
-                    </Stack>} 
-                    {/* {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                    </Stack>}
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/listpointments">Todas Citas</NavLink>
                     </Boton>}
                     {admin.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
@@ -86,8 +67,7 @@ const Header = () => {
                     </Boton>}
                     {admin.token && <Stack direction="row" >
                         <Avatar alt="B" src={admin.admin.avatar} />
-                    </Stack>} */}
-
+                    </Stack>}
                 </ul>
             </div >
         </>

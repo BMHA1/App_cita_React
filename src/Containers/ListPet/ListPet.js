@@ -5,22 +5,27 @@ import ActionPets from '../../service/redux/Action/ActionPets';
 import React, { useEffect } from 'react';
 import Boton from '../../Components/Boton/Boton';
 import './ListPet.scss'
+import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 
 const ListPet = () => {
     const pets = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
     const dispatch = useDispatch()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
+
+
+
 
     useEffect(() => {
         getpets(user)
     }, [user])
-    
+
 
     const getpets = async (e) => {
-        // console.log("entrando")
         try {
             let res = await APIConsumer.getAllPets(e);
-            // console.log(res.Data)  // deberiamos recibir un array de objectos de cachorritos
             dispatch(ActionPets.addPets(res.Data))
 
         } catch (error) {
@@ -30,16 +35,25 @@ const ListPet = () => {
     }
     const deletePet = async (e) => {
         console.log('hola pets')
-        let resul = await APIConsumer.deletePets(e)
-        if (resul.status == "400") {
-            console.log(resul.message)
+        try {
+
+            let resul = await APIConsumer.deletePets(e)
+            if (resul.status == "400") {
+                console.log(resul.message)
+            }
+        } catch (error) {
 
         }
+
         getpets(user)
     }
 
     return (
         <>
+
+            {error && <Error />}
+            {loading ? <Loading />
+                :
                 <div className="listpet">
                     {pets?.map((e, i) => {
                         return <CardPet
@@ -51,6 +65,7 @@ const ListPet = () => {
                             boton={<Boton onClick={() => deletePet(e.id)}>ELIMINAR</Boton>} />
                     })}
                 </div>
+            }
         </>
     )
 }

@@ -1,4 +1,4 @@
-import ListUsers from '../ListUser/ListUser'
+import ListUsers from '../../Components/ListUser/ListUser'
 import './ProfileAdmin.scss'
 import Typography from '@mui/material/Typography';
 const ProfileAdmin = () => {
@@ -11,8 +11,7 @@ const ProfileAdmin = () => {
             <Typography variant="h3" component="div" gutterBottom>
                 MI CLIENTES
             </Typography>
-{/* 
-            <ListUsers /> */}
+            <ListUsers />
         </>
     )
 }
