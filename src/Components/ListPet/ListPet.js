@@ -1,23 +1,18 @@
-import CardPet from "../../Components/CardPet/CardPet";
+import CardPet from "../CardPet/CardPet";
 import { useSelector, useDispatch } from 'react-redux';
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import ActionPets from '../../service/redux/Action/ActionPets';
 import React, { useEffect } from 'react';
-import Boton from '../../Components/Boton/Boton';
+import Boton from '../Boton/Boton';
 import './ListPet.scss'
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 
 const ListPet = () => {
-    const pets = useSelector((store) => store.pets)
+    const pet = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
     const dispatch = useDispatch()
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
-
-
-
-
+    
     useEffect(() => {
         getpets(user)
     }, [user])
@@ -27,12 +22,12 @@ const ListPet = () => {
         try {
             let res = await APIConsumer.getAllPets(e);
             dispatch(ActionPets.addPets(res.Data))
-
         } catch (error) {
             alert(error, " es de appointmest");
         }
-
     }
+
+
     const deletePet = async (e) => {
         console.log('hola pets')
         try {
@@ -50,13 +45,13 @@ const ListPet = () => {
 
     return (
         <>
-
             {error && <Error />}
             {loading ? <Loading />
                 :
                 <div className="listpet">
-                    {pets?.map((e, i) => {
+                    {pet?.map((e, i) => {
                         return <CardPet
+                            key={i}
                             id={e.id}
                             avatar={e.avatar}
                             name={e.name}

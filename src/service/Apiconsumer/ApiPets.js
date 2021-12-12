@@ -48,6 +48,22 @@ export const APIConsumer = {
             console.log(error)
         }
     },
+    getAllPetsAdmin: async () => {
+        try {
+            const result = await fetch(url + "/all", {
+                headers: {
+                    "Authorization": token
+                },
+                method: "GET"
+            })
+            const pets = await result.json()
+            console.log(pets.Data)
+            return pets
+
+        } catch (error) {
+            console.log(error)
+        }
+    },
     deletePets: async (id) => {
         console.log(id)
         try {
