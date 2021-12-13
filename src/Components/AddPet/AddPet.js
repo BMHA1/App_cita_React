@@ -1,6 +1,6 @@
 import TextField from '@mui/material/TextField'
 import { Grid } from '@mui/material';
-import Boton from '../../Components/Boton/Boton';
+import Boton from '../Boton/Boton';
 
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import { useNavigate } from 'react-router-dom'
