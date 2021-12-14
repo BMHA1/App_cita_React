@@ -1,7 +1,7 @@
 import { APIConsumer } from '../../service/Apiconsumer/ApiDoctor';
 import TextField from '@mui/material/TextField'
 import { Grid } from '@mui/material';
-import Boton from '../../Components/Boton/Boton';
+import Boton from '../Boton/Boton';
 import './AddAppointments.scss'
 // import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';

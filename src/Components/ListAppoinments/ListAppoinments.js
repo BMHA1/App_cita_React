@@ -17,13 +17,12 @@ const ListAppoinments = () => {
 
     const appoinment = useSelector((store) => store.appointments)
     const pet = useSelector((store) => store.pets)
-    const dispatch = useDispatch()
-
-
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
+    const dispatch = useDispatch()
 
     const getAppointments = (id) => {
+
         setLoading(true)
         setTimeout(async () => {
             try {

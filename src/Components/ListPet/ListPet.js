@@ -2,7 +2,7 @@ import CardPet from "../CardPet/CardPet";
 import { useSelector, useDispatch } from 'react-redux';
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import ActionPets from '../../service/redux/Action/ActionPets';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Boton from '../Boton/Boton';
 import './ListPet.scss'
 import Loading from '../Loading/Loading';
@@ -11,19 +11,25 @@ import Error from '../Error/Error';
 const ListPet = () => {
     const pet = useSelector((store) => store.pets)
     const user = useSelector((store) => store.user)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
+    const [message, setMessage] = useState(false)
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
         getpets(user)
     }, [user])
 
 
     const getpets = async (e) => {
+
         try {
             let res = await APIConsumer.getAllPets(e);
             dispatch(ActionPets.addPets(res.Data))
+            setLoading(false)
         } catch (error) {
-            alert(error, " es de appointmest");
+            setError(true)
+            setLoading(false)
         }
     }
 
@@ -31,13 +37,14 @@ const ListPet = () => {
     const deletePet = async (e) => {
         console.log('hola pets')
         try {
-
+            setLoading(true)
             let resul = await APIConsumer.deletePets(e)
-            if (resul.status == "400") {
-                console.log(resul.message)
+            if (resul) {
             }
+            setLoading(false)
         } catch (error) {
-
+            setError(true)
+            setLoading(false)
         }
 
         getpets(user)

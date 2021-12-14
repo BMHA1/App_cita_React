@@ -4,6 +4,14 @@ import petsReducers from "./petsReducers"
 import userReducers from "./userReducers"
 import appointmentsReducers from "./appointmentsReducers"
 import doctorReducers from "./doctorReducers";
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/es/storage/session";
+
+const persistConfig={
+    key:'root',
+    storage,
+    whitelist:['pets', 'appointments']
+}
 
 const mainReducer = combineReducers({
     admin: adminReducers,
@@ -14,4 +22,4 @@ const mainReducer = combineReducers({
 
 })
 
-export default mainReducer
+export default persistReducer(persistConfig, mainReducer)

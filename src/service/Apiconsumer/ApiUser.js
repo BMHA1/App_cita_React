@@ -50,6 +50,8 @@ export const APIConsumer = {
         }
     },
     getAllUsers: async () => {
+
+        console.log('getAllUsers');
         try {
             let result = await fetch(url + '/all', {
                 method: "GET",
@@ -57,7 +59,7 @@ export const APIConsumer = {
             })
 
             const users = await result.json();
-            // console.log(users);
+            console.log(users);
             return users
         } catch (error) {
 

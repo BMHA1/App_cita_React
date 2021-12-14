@@ -52,7 +52,7 @@ export const APIConsumer = {
         try {
             const result = await fetch(url + "/all", {
                 headers: {
-                    "Authorization": token
+                    "Authorization": "token"
                 },
                 method: "GET"
             })

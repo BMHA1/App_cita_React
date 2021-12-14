@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ActionUser from '../../service/redux/Action/ActionUser';
+import ActionAdmin from '../../service/redux/Action/ActionAdmin';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -18,20 +19,25 @@ const Header = () => {
     const SignOff = () => {
         // console.log("sigOFFF")
         dispatch(ActionUser.addToken(false))
-        return setHome(true)
+        dispatch(ActionAdmin.addTokenAdmin(false))
+        setHome(true)
+        console.log(Home)
     }
 
     useEffect(() => {
-        if (user.token || admin) {
+        if (user.token) {
+            return setHome(false)
+        } else if (admin.token) {
+            console.log(admin.token)
             return setHome(false)
         }
     })
-
     return (
         <>
             <div className='header'>
                 <div className='logo'></div >
                 <ul>
+
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Inicio</NavLink>
                     </Boton>}
@@ -41,6 +47,7 @@ const Header = () => {
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>}
+                    {/* USUARIO=CLIENTE */}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
@@ -56,11 +63,17 @@ const Header = () => {
                     {user.token && <Stack direction="row" >
                         <Avatar alt="B" src={user.user.avatar} />
                     </Stack>}
-                    {admin.token && <Stack direction="row" >
-                        <Avatar alt="B" src={user.user.avatar} />
-                    </Stack>}
+
+                    {/* HEADEAR ADMIN */}
+
                     {admin.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/listpointments">Todas Citas</NavLink>
+                        <NavLink className="link" to="/listpointments">Doctores</NavLink>
+                    </Boton>}
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">Usuarios</NavLink>
+                    </Boton>}
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">CITAS</NavLink>
                     </Boton>}
                     {admin.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Cerrar Sesión</NavLink>

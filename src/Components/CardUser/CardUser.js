@@ -20,7 +20,7 @@ const CardUser = (props) => {
     return (
         <div>
 
-            <Card sx={{ maxWidth: 210 }}>
+            <Card sx={{ maxWidth: 225}}>
                 <CardActionArea onClick={(() => redirection())}>
                     <CardMedia
                         component="img"

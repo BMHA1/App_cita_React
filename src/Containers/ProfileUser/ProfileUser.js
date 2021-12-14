@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import ListPet from "../ListPet/ListPet"
+import ListPet from "../../Components/ListPet/ListPet"
 import './ProfileUser.scss'
 import Typography from '@mui/material/Typography';
 
