@@ -10,7 +10,7 @@ import storage from "redux-persist/es/storage/session";
 const persistConfig={
     key:'root',
     storage,
-    whitelist:['pets', 'appointments']
+    whitelist:['pets', 'appointments','user']
 }
 
 const mainReducer = combineReducers({

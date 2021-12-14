@@ -13,7 +13,6 @@ const CardPet = (props) => {
     let navigate = useNavigate()
 
     const redirection = () => {
-
         console.log(props)
         const id = props.id
         dispatch(ActionPets.addPets(id))
@@ -23,9 +22,8 @@ const CardPet = (props) => {
     return (
         <>
             <div className='card'>
-
-                <Card   sx={{ maxWidth: 210 }}>
-                    <CardActionArea  onClick={(() => redirection())}>
+                <Card sx={{ maxWidth: 210 }}>
+                    <CardActionArea onClick={(() => redirection())}>
                         <CardMedia
                             component="img"
                             height="150"
@@ -45,11 +43,12 @@ const CardPet = (props) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <div className="delete">{props.boton}</div>
-
-                        <Boton size="small" color="primary">
-                            Ver cita
-                        </Boton>
+                        <div size="small" color="primary">
+                            {props.citas}
+                        </div>
+                        <div size="small" color="primary">
+                            {props.eliminar}
+                        </div>
                     </CardActions>
                 </Card>
             </div>

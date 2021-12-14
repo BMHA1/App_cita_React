@@ -89,7 +89,7 @@ const ListAppoinments = () => {
                             state={e.state}
                             doctor={e.doctorId}
                             eliminar={<Boton onClick={(() => deleteAppointments(e.id))}>ELIMINAR</Boton>}
-                            modificar={<Boton onClick={(() => modifyAppointments(e.id))} >MODIFICAR</Boton>}
+                            modificar={<Boton onClick={(() => modifyAppointments(e.id))} >MIFICAR</Boton>}
                         />
                     })}
                 </div>}

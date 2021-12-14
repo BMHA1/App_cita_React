@@ -42,7 +42,6 @@ const ListUsers = () => {
 
 
     if (Object.keys(user.users).length !== 0) {
-        console.log('soy mayor que cero')
         return (
             <>
                 {error && <Error />}
@@ -67,7 +66,7 @@ const ListUsers = () => {
         )
     } else {
         return (< Typography variant="h3" component="div" gutterBottom >
-            Lista Usuarios...
+            Cargando Usuarios...
         </Typography >
         )
     }

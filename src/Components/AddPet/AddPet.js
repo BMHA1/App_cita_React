@@ -1,11 +1,10 @@
 import TextField from '@mui/material/TextField'
 import { Grid } from '@mui/material';
 import Boton from '../Boton/Boton';
-
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import { useNavigate } from 'react-router-dom'
-import './AddPet.scss'
 import { useSelector } from 'react-redux';
+import './AddPet.scss'
 
 const AddPet = () => {
     let navigate = useNavigate()
@@ -13,7 +12,7 @@ const AddPet = () => {
     
 
     const HandelChangeSend = (d) => {
-        // setLoading(true)
+        setLoading(true)
         d.preventDefault()
         const pets = {
             avatar: d.target.avatar.value,
