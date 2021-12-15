@@ -46,7 +46,6 @@ const Register = () => {
             {loading && <h1>Loading...</h1>}
             <form onSubmit={(d) => HandelChangeSend(d)} >
                 <div className="Container-c">
-
                     <Grid className="Grid" container spacing={1} columns={2} justifyContent="center" >
                         <Grid columnSpacing={2} >
                             <Grid item xs={5} className="avatar">

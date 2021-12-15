@@ -4,11 +4,11 @@ import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import ActionPets from '../../service/redux/Action/ActionPets';
 import React, { useEffect, useState } from 'react';
 import { Typography } from '@mui/material'
+import { useNavigate } from "react-router";
 import Boton from '../Boton/Boton';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import './ListPet.scss'
-import { useNavigate } from "react-router";
 
 
 const ListPet = () => {
@@ -52,11 +52,6 @@ const ListPet = () => {
        
     }
 
-    const rediretion =()=>{
-        navigate('/ProfilePet')
-    }
-
-
     if (Object.keys(pet).length !== 0) {
         return (
             <>
@@ -73,7 +68,7 @@ const ListPet = () => {
                                 gender={e.gender}
                                 weight={e.weight}
                                 eliminar={<Boton onClick={() => deletePet(e.id)}>ELIMINAR</Boton>}
-                                citas={<Boton onClick={() => rediretion()}>PERFIL</Boton>}
+                                citas={<Boton onClick={() => navigate('/ProfilePet')}>PERFIL</Boton>}
                             />
                         })}
                     </div>
