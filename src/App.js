@@ -35,8 +35,6 @@ function App() {
             <Route path="/listuser" element={<ListUser />} exact />{/* página donde se mostrarán todos los usuarios (Solo Admin)*/}
             <Route path="/addpet" element={<AddPet />} exact />{/* página dar de alta a una mascota*/}
             <Route path="/addapointments" element={<AddAppointments />} exact />{/* página para pedir cita*/}
-            {/* <Route path="/listpointments" element={<ListAppoinment />} exact />página para pedir cita */}
-            
           </Routes>
         </BrowserRouter>
       {/* </Provider> */}

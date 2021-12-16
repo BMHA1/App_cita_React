@@ -55,9 +55,10 @@ const ListUsers = () => {
                                     id={i}
                                     avatar={e.avatar}
                                     name={e.name}
-                                    gender={e.gender}
-                                    age={e.age}
-                                    boton={<Boton onClick={() => deleteUsers(e.id)}>ELIMINAR</Boton>}
+                                    role={e.role}
+                                    email={e.email}
+                                    phone={e.phone}
+                                    eliminar={<Boton onClick={() => deleteUsers(e.id)}>ELIMINAR</Boton>}
                                 />
                             })}
                         </div>

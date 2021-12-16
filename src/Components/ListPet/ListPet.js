@@ -68,7 +68,7 @@ const ListPet = () => {
                                 gender={e.gender}
                                 weight={e.weight}
                                 eliminar={<Boton onClick={() => deletePet(e.id)}>ELIMINAR</Boton>}
-                                citas={<Boton onClick={() => navigate('/ProfilePet')}>PERFIL</Boton>}
+                                citas={<Boton onClick={() => navigate('/ProfilePet')}>CITAS</Boton>}
                             />
                         })}
                     </div>

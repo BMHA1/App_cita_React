@@ -11,7 +11,7 @@ const CardAppo = (props) => {
 
     return (
         <>
-            <Card sx={{ maxWidth: 210 }}>
+            <Card sx={{ maxWidth: 230}}>
                 <CardActionArea>
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">
@@ -29,16 +29,14 @@ const CardAppo = (props) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Boton size="small" color="primary">
-                        eliminar
-                    </Boton> <Boton size="small" color="primary">
-                        eliminar
-                    </Boton>
-                    <div className="delete">{props.eliminar}</div>
-                    <div className="modify">{props.modificar}</div>
+                    <div size="small" color="primary">
+                        {props.modificar}
+                    </div>
+                    <div size="small" color="primary">
+                        {props.eliminar}
+                    </div>
                 </CardActions>
             </Card>
-
         </>
     )
 }

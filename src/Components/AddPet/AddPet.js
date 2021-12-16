@@ -1,5 +1,4 @@
 import TextField from '@mui/material/TextField'
-import { Grid } from '@mui/material';
 import Boton from '../Boton/Boton';
 import { APIConsumer } from '../../service/Apiconsumer/ApiPets';
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +6,8 @@ import { useSelector } from 'react-redux';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import { useState } from 'react';
+import { Grid, Box } from '@mui/material'
+
 import './AddPet.scss'
 
 const AddPet = () => {
@@ -59,7 +60,7 @@ const AddPet = () => {
             {error && <Error />}
 
             {loading && <Loading />}
-            <h1>registra tu mascota</h1>
+            <Box sx={{ lineHeight: 'normal', m: 1, align:'justify', typography: 'subtitle2', fontSize: '2.5em' }}>Hora de registar tus mascotas</Box>
             {message ?
                 <div>
                     <span>¡Registro Exitoso!</span>

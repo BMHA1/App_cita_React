@@ -77,7 +77,9 @@ const ListAppoinments = () => {
             </Typography >
             {error && <Error />}
             {loading ?
-                <Loading />
+                <div className='Loading'>
+                    <Loading />
+                </div>
                 :
                 <div className='ContainerAppointments'>
                     {appoinment?.Data?.map((e, i) => {
@@ -89,7 +91,7 @@ const ListAppoinments = () => {
                             state={e.state}
                             doctor={e.doctorId}
                             eliminar={<Boton onClick={(() => deleteAppointments(e.id))}>ELIMINAR</Boton>}
-                            modificar={<Boton onClick={(() => modifyAppointments(e.id))} >MIFICAR</Boton>}
+                            modificar={<Boton onClick={(() => modifyAppointments(e.id))} >MODIFICAR</Boton>}
                         />
                     })}
                 </div>}

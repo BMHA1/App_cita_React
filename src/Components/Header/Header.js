@@ -54,9 +54,9 @@ const Header = () => {
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addpet">Añadir Mascota</NavLink>
                     </Boton>}
-                    {user.token && < Boton variant="outlined" size="small" margin="normal">
+                    {/* {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/listpointments">Mis Citas</NavLink>
-                    </Boton>}
+                    </Boton>} */}
                     {user.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Cerrar Sesión</NavLink>
                     </Boton>}

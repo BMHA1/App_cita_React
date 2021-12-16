@@ -20,7 +20,7 @@ const CardUser = (props) => {
     return (
         <div>
 
-            <Card sx={{ maxWidth: 225}}>
+            <Card sx={{ maxWidth: 250 }}>
                 <CardActionArea onClick={(() => redirection())}>
                     <CardMedia
                         component="img"
@@ -33,22 +33,20 @@ const CardUser = (props) => {
                             {props.name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            <span>Sexo:{props.usersuname}</span>
+                            <span>Role:{props.role}</span>
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            <span>Edad:{props.email}</span>
+                            <span>Email:{props.email}</span>
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            <span>Edad:{props.phone}</span>
+                            <span>Movil:{props.phone}</span>
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <div className="delete">{props.boton}</div>
-
-                    <Boton size="small" color="primary">
-                        Pedir Cita
-                    </Boton>
+                    <div size="small" color="primary">
+                        {props.eliminar}
+                    </div>
                 </CardActions>
             </Card>
         </div>
