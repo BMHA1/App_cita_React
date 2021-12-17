@@ -1,160 +1,106 @@
-# App de citas
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+como ejecutar las pruebas automatizadas para este sistema_
+=======
+# Gestión de citas 
+
+## Requerimientos para poder utilizar el proyecto en tu pc 🚀
+
+* Instalar Node.js (es un entorno en tiempo de ejecución multiplataforma) [ Enlace de descarga](https://nodejs.org/es/download/) 
+
+* Clona el repositorio  
+```git clone git@github.com:BMHA1/App_cita_React.git```
+* Instala Node-Modules para descargar las dependecias necesarias  
+```npm install```
+* Para iniciar el servidor de desarrollo de React  
+```npm start ```
+
+
+## Tecnologías Utilizadas 🔧
+
+* react: es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página.  
+```create-react-app nombre de "Nombre del proyecto```
+
+* react-router-dom: Permite implementar enrutamiento dinámico en una aplicación web, para instalar escriba el código  
+```npm install react-router-dom```
+* redux: Es un librería de Javascript que nos permite generar un estado general en nuestro proyecto, el siguiente comando te permite descargar.  
+
+```npm install redux```
+
+* react-redux: Existe 3 formas de usar redux, ya que es una libreria independiente de react e instalando react-redux, podeis usar la metodología no agnostica de redux.  
+
+```npm install react-redux```
+
+* SASS: Es un lenguaje de hoja de estilos en cascada (Hay que tener node.js instalado)  
+```npm install node-sass```
+
+* Material UI: Es una libreria que contiene componetes de react diseñados, nos beneficia a agilizar el diseño. 
+para la instalación adjunto un link que contendrá los pasos para integrar Mui en tus proyectos futuro 
+[ Instrucciones de descarga:](https://mui.com/getting-started/installation/) 
+
+
+## Estructura del proyecto ⚙️
+
+         ├───SRC
+            ├───Container
+            |      ├──AdminPage
+            |      ├──HomePage
+            |      ├──Login
+            |      ├──ProfileAdmin
+            |      ├──ProfileDoctor
+            |      ├──ProfilePet
+            |      ├──ProfileUser
+            |      ├──Register
+            |      └──HomePage
+            |      
+            |      
+            ├──Components
+            |         ├──Boton
+            |         ├──CardAppo
+            |         ├──CardPet
+            |         ├──CardUser
+            |         ├──Error
+            |         ├──Header
+            |         ├──ListAllPets
+            |         ├──ListAppointments
+            |         ├──ListPet
+            |         ├──ListUser
+            |         ├──Loading
+            |         └──Header
+            ├───Services
+            |        ├──Redux
+            |        |    ├──Action
+            |        |    |    ├──ActionAdmin
+            |        |    |    ├──ActionAdmin
+            |        |    |    ├──ActionAppoinments
+            |        |    |    ├──ActionDoctor
+            |        |    |    ├──ActionPets
+            |        |    |    └──ActionUser 
+            |        |    |
+            |        |    └──Reducers
+            |        |    |      ├──AdminReducers
+            |        |    |      ├──AppoinmentsReducers
+            |        |    |      ├──DoctorReducers
+            |        |    |      ├──DoctorReducers
+            |        |    |      ├──PetsReducers
+            |        |    |      └──UserReducers
+            |        |    └── store    
+            |        |
+            |        └──ApiConsumer
+            |                 ├──ApiAdmin
+            |                 ├──ApiAppoinments
+            |                 ├──ApiDoctor
+            |                 ├──ApiPets
+            |                 └──ApiUser
+            ├───App
+            ├───Index
+            └───Package.json
+            
+            
+ * Index: Este fichero es el Container principal, que es padre de App.js
+ * App.js: En App.js se encuentra todas las Rutas principales de la aplicación. 
+ * Redux: En la siguiente carpeta, tenemos 2 carpetas Action y reducers además un fichero store.js
+    * store.js : En este fichero se encuentra el estado general de redux.
+    * Reducers: En esta carpeta tenemos los distintos reductores, siguiendo la misma metodología he utilizado uno para cada endpoints.
+    * Apiconsumer: He separado los Apiconsumer para cada uno de los endpoints, en cada uno de los ficheros tendremos los metodos que llaman a la api.
+    * Action: En las action tengo definidos los objetos con el payload y type 
+      
 
-
-
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# Título del Proyecto
-
-_La clinica SEDAVI nos han pedido veterinaria desarrollar el frontend correspondiente al sistema de gestión de citas con un Director y 5 dentistas, que admiten clientes según la disponibilidad de su agenda. En esta aplicación en el caso del Director, podrá ver tanto los registros de los usuarios, como las citas de diarias. También es el único que puede asignar el Roll de administrador a otro usuario, ya que al hacer un nuevo registro por defecto, se crea un usuario nuevo.
-
-
-El cliente, una vez registrado, puede pedir una cita con un médico siempre y cuando la cita esté libre y además tendrá acceso al historial de citas y podrá hacer una visualización de citas futuras._
-
-## Comenzando 🚀
-
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
-
-### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-De forma predeterminada, el servidor de reacción se ejecutará en el puerto 3000 y el servidor Express se ejecutará en el puerto 5000
-
-
-Una vez que finaliza la composición de Docker Abra una nueva pestaña del navegador http: // localhost: 3000 /
-
-Utilice los usuarios de muestra para ver todas las funcionalidades en curso
-
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
-
----
-<!-- ç -->
