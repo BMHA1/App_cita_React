@@ -1,6 +1,6 @@
 # Gestión de citas 
 
-     Ultimo proyecto del bootcamp, nos solicitan desarrollar una App para gestionar las citas de una clinica veterinaria, el usuario posee muchas mascotas y el mismo puede elegir un doctor determinado para elegir la cita. 
+Ultimo proyecto del bootcamp, nos solicitan desarrollar una App para gestionar las citas de una clinica veterinaria, el usuario posee muchas mascotas y el mismo puede elegir un doctor determinado para elegir la cita. 
 
    Además la app cuenta limitaciones segun el role de quien utiliza la app, el administrador por ejemplo tiene acceso a administrar tanto a los usuarios, citas y doctores de la aplicación. 
 
