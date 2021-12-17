@@ -23,20 +23,20 @@ const Register = () => {
             password: d.target.password.value,
             phone: d.target.phone.value,
             age: d.target.age.value,
-            addres: d.target.addres.value
+            address: d.target.address.value
         }
         console.table(user)
         setTimeout(async () => {
             try {
                 let result = await APIConsumer.CreateUser(user)
                 console.log(result)
-                if (result) navigate('/login')
+                if (result) navigate('/')
                 setLoading(false)
             } catch (error) {
                 setError(true)
                 setLoading(false)
             }
-        }, 5000);
+        }, 500);
     }
 
 
@@ -46,7 +46,6 @@ const Register = () => {
             {loading && <h1>Loading...</h1>}
             <form onSubmit={(d) => HandelChangeSend(d)} >
                 <div className="Container-c">
-
                     <Grid className="Grid" container spacing={1} columns={2} justifyContent="center" >
                         <Grid columnSpacing={2} >
                             <Grid item xs={5} className="avatar">
@@ -110,7 +109,7 @@ const Register = () => {
                             <Grid item xs={5} className="addres">
                                 <TextField type='text'
                                     size="small"
-                                    name='addres'
+                                    name='address'
                                     placeholder="Introduce tu dirección"
                                     margin="dense"
                                     required />

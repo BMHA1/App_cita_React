@@ -1,9 +1,15 @@
-.ContainerPrincipal-Appointments {
-    display: flexbox;
-    border: 1px red solid;
-    justify-content: center;
-    gap: 5em;
-    .Container-Appointments {
-        border: 1px red;
+.principal-profileUser {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10em;
+    // background-image: url(../../Containers/HomePage/image/curita.png);
+    // background-size: 12em 12em;
+    height: 100vh;
+    
+    .listAnimales {
+        display: flex;
+        flex-direction: row;
     }
 }

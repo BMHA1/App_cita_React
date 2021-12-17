@@ -1,17 +1,24 @@
-
-import ListPet from "../ListPet/ListPet"
+import { useSelector } from 'react-redux';
+import ListPet from "../../Components/ListPet/ListPet"
+import './ProfileUser.scss'
+import Typography from '@mui/material/Typography';
 
 const ProfileUser = () => {
+    const user = useSelector((store) => store.user)
 
     return (
         <>
-            <h1>MIS MASCOTAS</h1>
-            <div className="listAnimales">
-            <ListPet />
+            <div className="principal-profileUser">
+                <div className='Titulo'>
+                    <Typography variant="h3" component="div" gutterBottom>
+                        Bienvenido{' ' + user.user.name}
+                    </Typography>
+                </div>
+                <div className="listAnimales">
+                    <ListPet />
+                </div>
             </div>
         </>
     )
-
-
 }
 export default ProfileUser

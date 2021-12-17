@@ -5,7 +5,7 @@ const userinitial = {
     users: {}
 }
 
-const userReducer = (user = userinitial, action) => {
+const userReducers = (user = userinitial, action) => {
 
     // console.log(action.payload)
     if (action.type === "ADD_TOKEN") {
@@ -29,4 +29,4 @@ const userReducer = (user = userinitial, action) => {
     }
     return user
 }
-export default userReducer
+export default userReducers

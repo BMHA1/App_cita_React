@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ActionUser from '../../service/redux/Action/ActionUser';
+import ActionAdmin from '../../service/redux/Action/ActionAdmin';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -15,42 +16,28 @@ const Header = () => {
     const [Home, setHome] = useState(true)
     const dispatch = useDispatch()
 
-
-
-// console.log (admin)
-// console.log(user)
-
     const SignOff = () => {
         // console.log("sigOFFF")
         dispatch(ActionUser.addToken(false))
-        return setHome(true)
-    
+        dispatch(ActionAdmin.addTokenAdmin(false))
+        setHome(true)
+        console.log(Home)
     }
 
-
-
-
-    // console.log(Home)
-
-
-    
     useEffect(() => {
         if (user.token) {
-            // console.log("dentro del if")
+            return setHome(false)
+        } else if (admin.token) {
+            console.log(admin.token)
             return setHome(false)
         }
-
     })
-
-
-    // console.log(Home)
-
     return (
         <>
             <div className='header'>
-
                 <div className='logo'></div >
                 <ul>
+
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Inicio</NavLink>
                     </Boton>}
@@ -60,31 +47,40 @@ const Header = () => {
                     {Home && <Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/register">Registrarse</NavLink>
                     </Boton>}
-                     {user.token && < Boton variant="outlined" size="small" margin="normal">
+                    {/* USUARIO=CLIENTE */}
+                    {user.token && < Boton variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/addapointments">Pedir Cita</NavLink>
                     </Boton>}
                     {user.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/listpointments">Mis Citas</NavLink>
+                        <NavLink className="link" to="/addpet">Añadir Mascota</NavLink>
                     </Boton>}
+                    {/* {user.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">Mis Citas</NavLink>
+                    </Boton>} */}
                     {user.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Cerrar Sesión</NavLink>
                     </Boton>}
                     {user.token && <Stack direction="row" >
                         <Avatar alt="B" src={user.user.avatar} />
                     </Stack>}
-                    {admin.token && <Stack direction="row" >
-                        <Avatar alt="B" src={user.user.avatar} />
-                    </Stack>} 
-                    {/* {admin.token && < Boton variant="outlined" size="small" margin="normal">
-                        <NavLink className="link" to="/listpointments">Todas Citas</NavLink>
+
+                    {/* HEADEAR ADMIN */}
+
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">Doctores</NavLink>
+                    </Boton>}
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">Usuarios</NavLink>
+                    </Boton>}
+                    {admin.token && < Boton variant="outlined" size="small" margin="normal">
+                        <NavLink className="link" to="/listpointments">CITAS</NavLink>
                     </Boton>}
                     {admin.token && < Boton onClick={() => SignOff()} variant="outlined" size="small" margin="normal">
                         <NavLink className="link" to="/">Cerrar Sesión</NavLink>
                     </Boton>}
                     {admin.token && <Stack direction="row" >
                         <Avatar alt="B" src={admin.admin.avatar} />
-                    </Stack>} */}
-
+                    </Stack>}
                 </ul>
             </div >
         </>

@@ -1,0 +1,16 @@
+.principal-profileAdmin {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10em;
+    // background-image: url(../../Containers/HomePage/image/curita.png);
+    // background-size: 12em 12em;
+    height: 100vh;
+    width: 100vw;
+    
+    .listUsuarios{
+        display: flex;
+        flex-direction: row;
+    }
+}

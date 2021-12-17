@@ -1,7 +1,7 @@
 import { APIConsumer } from '../../service/Apiconsumer/ApiDoctor';
 import TextField from '@mui/material/TextField'
 import { Grid } from '@mui/material';
-import Boton from '../../Components/Boton/Boton';
+import Boton from '../Boton/Boton';
 import './AddAppointments.scss'
 // import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
@@ -28,17 +28,11 @@ const AddAppointments = () => {
 
     const HandelChangeSend = (d) => {
         d.preventDefault()
-        console.log("aqui estoy")
-        console.log(d.target.date.value)
-        console.log( d.target[0].value + 'doctor')
-        console.log( d.target[1].value)
         const appoinment = {
-
             date: d.target.date.value,
             state: "Pending",
             petId: d.target[0].value,
             doctorId: d.target[1].value,
-
         }
         setTimeout(async () => {
             try {
@@ -58,7 +52,7 @@ const AddAppointments = () => {
             {/* {error && <h1>¡I'm sorry, something has happened!</h1>}
                 {loading && <h1>Loading...</h1>} */}
             <div className="contenedorPadre-Appointment">
-                <div className="img-appointments">
+                <div className="imgAppointments-Add">
                     <img src={"https://bestanimations.com/uploads/gifs/631689384cute-funny-dog-animated-gif-2.gif"} alt="use"></img>
                 </div>
                 <form onSubmit={(d) => HandelChangeSend(d)} >

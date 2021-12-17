@@ -5,23 +5,53 @@ import gato from './image/gato-1.png'
 import curita1 from './image/curita.png'
 import inyeccion2 from './image/inyeccion.png'
 import huesos from './image/huesos.png'
+import { Grid, Typography, Box, useMediaQuery } from '@mui/material'
 
 
 const HomePage = () => {
+    const isActive = useMediaQuery('(min-width:900px)');
 
     return (
         <>
             <div className="containerGeneral-Home">
                 <div className="containerCentral-Home">
-
                     <div className="title-Home">
-                        <p>Clínica Veterinaria Sedaví</p>
-                        <h1>Los Animales son Nuestras Mascotas y Nuestra Vida </h1><br />
-                        <p className="text-Home">  Ayudamos a las familias a tener animales sanos para
-                            poder disfrutarlos muchos años gracias a la medicina
-                            preventiva y a nuestros planes de salud</p>
+                        <Grid container justify='center'>
+                            <Grid item sx={12} md={7}>
+                                <Grid item md={12}>
+                                    <Box sx={{ lineHeight: 'normal', m: 1, letterSpacing: 3, typography: 'subtitle2', fontSize: '2.0em' }}>Los Animales son... <br />nuestras mascotas y nuestra vida!</Box>
+                                </Grid>
+                                <Grid item md={12}>
+                                    <Typography component="div">
+                                        <Box sx={{ lineHeight: 'normal', m: 1, letterSpacing: 3 }}>
+                                            Ayudamos a las familias a tener animales sanos para
+                                            poder disfrutarlos muchos años  gracias a la medicina
+                                            preventiva y a nuestros planes de salud.</Box>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                            <Grid item sx={12} md={2}  >
+                                <Box  >
+                                    {isActive ? <img
+                                        src={'https://www.hogarmania.com/img/mascotas/mascotas-listados.jpg'}
+                                        alt='{item.title}'
+                                        loading="lazy"
+                                        width={630}
+                                        height={320}
+                                    /> :
+                                        <img
+                                            src={'https://assets.entrepreneur.com/content/3x2/2000/1607626854-perritos-covid1.jpg?crop=16:9'}
+                                            alt='{item.title}'
+                                            loading="lazy"
+                                            width={350}
+                                            height={180}
+                                        />
+                                    }
+
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </div>
-                    <div className="img1"></div>
                 </div>
                 {/* //container de services */}
                 <div className="containerServices-Home">

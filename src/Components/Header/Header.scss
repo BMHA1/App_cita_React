@@ -3,12 +3,12 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    background-color: azure;
-    height: 4em;
+    background-image: linear-gradient(180deg, #abfaf2 0, #8feae6 25%, #6cd8d8 50%, #41c6cb 75%, #00b6c1 100%);
+    height: 8em;
     .logo {
         margin-left: 0.9em;
-        width: 10em;
-        height: 2em;
+        width: 17em;
+        height: 4em;
         background-image: url(https://veterinariasedavi.com/new/wp-content/uploads/2020/07/logo-clinica-veterinaria-sedavi.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -19,6 +19,7 @@
         gap: 0.5em;
         display: flex;
         justify-content: right;
+        align-items: center;
         .link {
             text-decoration: none;
         }
