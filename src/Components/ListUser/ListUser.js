@@ -36,7 +36,9 @@ const ListUsers = () => {
 
     }
     const deleteUsers = async (e) => {
-        await APIConsumer.deleteUsers(e)
+        console.log(e)
+        let result=await APIConsumer.deleteUsers(e)
+        console.log(result)
         getUsers()
     }
 
@@ -66,14 +68,11 @@ const ListUsers = () => {
             </>
         )
     } else {
-        return (< Typography variant="h3" component="div" gutterBottom >
-            Cargando Usuarios...
-        </Typography >
+        return (
+            < Typography variant="h3" component="div" gutterBottom >
+                De momento no hay usuarios, registre algun usuario...
+            </Typography >
         )
     }
-
-
-
 }
-
 export default ListUsers
